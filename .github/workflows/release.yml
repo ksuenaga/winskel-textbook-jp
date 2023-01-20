@@ -4,7 +4,7 @@ on:
   push:
 
 env:
-  FILENAME: correction/correction.tex
+  FILENAME: correction/correction
 jobs:
   release:
     runs-on: ubuntu-latest
