@@ -15,7 +15,7 @@ jobs:
       - name: Checkout git repo
         uses: actions/checkout@v2
       - name: Build a PDF file by latexmk
-        run: latexmk -r $RCFILENAME $FILENAME.tex && cp $FILENAME $BUILD_DIR
+        run: latexmk -r $RCFILENAME $FILENAME.tex && mkdir $BUILD_DIR && cp $FILENAME.pdf $BUILD_DIR
       - name: Upload artifact for github pages
         uses: maxheld83/ghpages@v0.3.0
         env:
