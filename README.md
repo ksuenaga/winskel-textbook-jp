@@ -6,5 +6,5 @@ Glynn Winskel 著，末永幸平他訳，「プログラミング言語の形式
 
 ## Contents
 
-- [正誤表](correction.md)
+- [正誤表](correction/correction.pdf)
 
