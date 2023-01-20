@@ -1,0 +1,56 @@
+% -*- encoding: utf-8 -*-
+
+\documentclass[12pt,titlepage,twoside,openright,dvipdfmx]{jsbook}
+
+\interfootnotelinepenalty=10000
+
+\usepackage{amsmath,amssymb,stmaryrd,amsthm,algorithm,algpseudocode,color,bcprules,url}
+\usepackage{proof}
+\usepackage{enumerate}
+\usepackage{mathtools}
+\usepackage{listings}
+\usepackage{okumacro-ruby}
+% \makeindex
+
+\usepackage{enumerate}
+\usepackage[inference]{semantic}
+\usepackage[dvipdfmx]{graphicx}
+
+\usepackage{enumerate}
+\usepackage[inference]{semantic}
+
+
+\title{『プログラミング言語の形式的意味論』正誤表}
+\author{Winskel 翻訳チーム}
+\date{\today}
+
+%%%%%%%%%%%%%%%% Definitions of global commands %%%%%%%%%%%%%%%%
+% DON'T ADD A COMMAND DEFINITION HERE.  Add your command definition in
+% xxx-def.tex
+
+% Name of the languages used throughout the book.
+\newcommand\IMP{\mathbf{IMP}}
+\newcommand\ASSN{\mathbf{Assn}}
+\newcommand\REC{\mathbf{REC}}
+
+% Environments used in the book
+\theoremstyle{definition}
+\newtheorem{theorem}{定理}[chapter]
+\newtheorem{proposition}[theorem]{命題}
+\newtheorem{lemma}[theorem]{補題}
+\newtheorem{fact}[theorem]{事実}
+\newtheorem{exercise}[theorem]{問題}
+\newtheorem{corollary}[theorem]{系}
+\newtheorem{example}[theorem]{例}
+\newtheorem*{exampleN}{例} % \cmt{西村}{番号なしの例のための環境}
+\newtheorem*{definition}{定義}
+\newtheorem*{notation}{記法}
+
+\input{defs}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\end{document}

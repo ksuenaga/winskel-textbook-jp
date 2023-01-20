@@ -1,0 +1,397 @@
+\newcommand\AND{\mathbin{\&}}
+\newcommand\OR{\mathbin{\mbox{or}}}
+\newcommand\IMPLIES{\mathbin{\implies}}
+\newcommand\IFF{\mathbin{\iff}}
+\newcommand\NEG{\neg}
+\newcommand\uniqexists{\exists!}
+\newcommand\set[1]{\left\{{#1}\right\}}
+\newcommand\termdecreasingchain{降鎖}
+\newcommand\transnote[1]{\footnote{訳注：{#1}}}
+\newcommand\NAT{\omega}
+\newcommand\POW{\mathcal{P}\!\mathit{ow}}
+\newcommand\PAIR[1]{({#1})}
+\newcommand\PARTIAL{\rightharpoonup}
+\newcommand\TOTAL{\rightarrow}
+\newcommand\COMP{\circ}
+\newcommand\DEFEQ{\defeq}
+\newcommand\ID{\mathit{Id}}
+\newcommand\INV[1]{{#1}^{-1}}
+\newcommand\OP{{\mathit{op}}}
+\newcommand{\transftn}[1]{}
+\newcommand{\mynote}[1]{}
+\newcommand{\Num}{\mathbf{N}}
+\newcommand{\Truth}{\mathbf{T}}
+\newcommand{\Loc}{\mathbf{Loc}}
+\newcommand{\Aexp}{\mathbf{Aexp}}
+\newcommand{\Bexp}{\mathbf{Bexp}}
+\newcommand{\Com}{\mathbf{Com}}
+\newcommand{\Ttrue}{\mathbf{true}}
+\newcommand{\Tfalse}{\mathbf{false}}
+\newcommand{\Cif}{\mathbf{if}}
+\newcommand{\Cthen}{\mathbf{then}}
+\newcommand{\Celse}{\mathbf{else}}
+\newcommand{\Cwhile}{\mathbf{while}}
+\newcommand{\Cdo}{\mathbf{do}}
+\newcommand{\Cskip}{\mathbf{skip}}
+\newcommand\States{\Sigma}
+\newcommand{\tuple}[1]{\langle{#1}\rangle}
+\newcommand{\evalone}{\to_{1}}
+\newcommand{\defeq}{\triangleq}
+\newenvironment{sufficiency}{\par
+  \normalfont
+  \begin{list}{$\Rightarrow$: }{%
+      \setlength{\leftmargin}{\parindent}%
+      \setlength{\rightmargin}{0pt}%
+      \setlength{\itemindent}{\parindent}%
+      \setlength{\labelwidth}{\parindent}%
+      \setlength{\listparindent}{\parindent}%
+      }
+  \item
+}{%
+\end{list}
+}
+\newenvironment{necessity}{\par
+  \normalfont
+  \begin{list}{$\Leftarrow$: }{%
+      \setlength{\leftmargin}{\parindent}%
+      \setlength{\rightmargin}{0pt}%
+      \setlength{\itemindent}{\parindent}%
+      \setlength{\labelwidth}{\parindent}%
+      \setlength{\listparindent}{\parindent}%
+      }
+  \item
+}{%
+\end{list}
+}
+\newtheorem*{myproof}{証明}
+\newcommand{\raisex}[1]{\raisebox{1ex}{#1}}
+\newcommand{\lowerx}[1]{\raisebox{-1ex}{#1}}
+\newlength{\inferlowerskip}
+\setlength{\inferlowerskip}{-1ex}
+\addtolength{\inferlowerskip}{-\inferLineSkip}
+\newcommand{\lowerinfer}[1]{\raisebox{\inferlowerskip}{#1}}
+\newcommand{\termstring}{文字列}
+\newcommand{\termsymbol}{記号}
+\newcommand{\termbooleanexpression}{ブール式}
+\newcommand{\termatomicexpression}{原子式}
+\newcommand{\termspecialcase}{特殊例}
+\newcommand{\termpredecessor}{先行}
+\newcommand{\termidc}{無限下降列}
+\newcommand{\termstructuralinduction}{構造帰納法}
+\newcommand{\yomistructuralinduction}{こうぞうきのうほう}
+\newcommand{\termnoetherinduction}{ネーター帰納法}
+\newcommand{\terminstance}{インスタンス}
+\newcommand{\yomiinstance}{いんすたんす}
+\newcommand{\termfinitary}{有限的}   % \cmt{西村}{有限的／有限項的 2種類が混在しているようです。} --> 有限的に
+\newcommand{\yomifinitary}{ゆうげんこうてき}
+\newcommand{\termsuccessor}{後続する数}
+\newcommand{\termwellfoundedrecursion}{整礎再帰法}
+\newcommand{\termruleinduction}{規則帰納法}
+\newcommand{\yomiruleinduction}{きそくきのうほう}
+\newcommand{\termfairness}{公平性}
+\newcommand{\yomifairness}{こうへいせい}
+\newcommand{\termcompositional}{要素還元的}
+\newcommand{\yomicompositional}{ようそかんげんてき}
+\newcommand{\termbottom}{最小元}
+\newcommand{\yomibottom}{さいしょうげん}
+\newcommand{\termpredomain}{前領域}
+\newcommand{\termprefixedpoint}{前不動点}
+\newcommand{\termpointwiseorder}{各点順序}
+\newcommand{\termstationary}{停滞的}
+\newcommand{\termpostfixedpoint}{後不動点}
+\newcommand{\termincreasingchain}{増加\termomegachain}
+\newcommand{\termomegachain}{$\omega$鎖}
+\newcommand{\denotation}[2]{\mathcal{#1}\llbracket{#2}\rrbracket}
+\newcommand{\denotationAv}[1]{\mathcal{A}v\llbracket{#1}\rrbracket}
+\newcommand{\termpredicatetransformer}{述語変換子}
+\newcommand{\termscope}{有効範囲} % スコープ?
+\newcommand{\FV}[1]{\mathrm{FV}(#1)}
+\newcommand\Assn{\mathbf{Assn}}
+\newcommand\Aexpv{\mathbf{Aexpv}}
+
+\newcommand\Intvar{\mathbf{Intvar}}
+
+\newcommand\EVEN{\mathit{even}}
+
+\newcommand\GCD{\mathrm{gcd}}
+
+\newcommand{\logand}{\mathop{\&}}
+
+\newcommand\sem[1]{\llbracket{#1}\rrbracket}
+
+\newcommand\ST{\mathit{ST}}
+\newcommand\PT{\mathit{PT}}
+\newcommand{\Pred}{\mathrm{Pred}}
+\newcommand{\DAexp}{\mathcal{A}}
+\newcommand{\DAexpv}{{\DAexp v}}
+\newcommand{\DBexp}{\mathcal{B}}
+\newcommand{\DCom}{\mathcal{C}}
+\newcommand{\preCond}[1]{\{#1\}\:}
+\newcommand{\postCond}[1]{\:\{#1\}}
+\newcommand{\dispreCond}[1]{\left\{#1\right\}\:}
+\newcommand{\dispostCond}[1]{\:\left\{#1\right\}}
+\newcommand{\TotalPreCond}[1]{[{#1}]\:}
+\newcommand{\TotalPostCond}[1]{\:[{#1}]}
+\newcommand{\lrbra}[1]{\llbracket #1 \rrbracket}
+\newcommand{\wkp}{\mathit{wp}}
+\newcommand{\wlp}{\mathit{wp}}
+\newcommand{\defiff}{\mathrel{\Leftrightarrow_{\mathit{def}}}}
+\newcommand{\modop}{\mathop{\mathbf{mod}}}
+\newcommand{\betapm}{\beta^{\pm}}
+
+\newcommand{\Pt}{\mathcal{P}t}
+
+\newcommand\twoelmcpo{\mathbf{O}}
+
+\newcommand\DOLLAR{\$}
+
+\newcommand\ISONE{\mathit{isone}}
+
+\newcommand\INFUN{\mathit{in}}
+
+\newcommand\APPLY{\mathit{apply}}
+\newcommand\CURRY{\mathit{curry}}
+\newcommand\UNCURRY{\mathit{uncurry}}
+
+\newcommand\INJ{\mathit{in}}
+\newcommand\NUM{\mathbf{N}}
+
+\newcommand\VARS{\mathbf{Var}}
+\newcommand\FVARS{\mathbf{Fvar}}
+\newcommand\IF{\mathbf{if}}
+\newcommand\THEN{\mathbf{then}}
+\newcommand\ELSE{\mathbf{else}}
+
+\newcommand\REDVA{\rightarrow_{\mathit{va}}^d}
+\newcommand\REDNA{\rightarrow_{\mathit{na}}^d}
+
+\newcommand\contfuns[1]{[{#1}]}
+\newcommand\ENVVA{\mathbf{Env_{\mathit{va}}}}
+\newcommand\FENVVA{\mathbf{Fenv}_{\mathit{va}}}
+\newcommand\ENVNA{\mathbf{Env_{\mathit{na}}}}
+\newcommand\FENVNA{\mathbf{Fenv}_{\mathit{na}}}
+
+\newcommand\semva[1]{\sem{#1}_{\mathit{va}}}
+\newcommand\semna[1]{\sem{#1}_{\mathit{na}}}
+
+
+\newcommand\valuize[1]{\lfloor{#1}\rfloor}
+\newcommand\COND{\mathit{Cond}}
+\newcommand\SEMCOND{\mathit{cond}}
+
+\newcommand\METALET{\mathit{let}}
+
+\newcommand\strict[1]{{#1}_\bot}
+
+\newcommand\ISZERO{\mathit{iszero}}
+
+\newcommand\SEMBOOL{\mathbf{T}}
+\newcommand\SEMTRUE{\mathbf{true}}
+\newcommand\SEMFALSE{\mathbf{false}}
+
+\newcommand\IN{\mathit{in}}
+\DeclareMathOperator\COL{{:}}
+\newcommand\CASE{\mathit{case}}
+\newcommand\OF{\mathit{of}}
+\newcommand\FIX{\mathit{fix}}
+
+\newcommand\LOGAND{\&}
+
+\newcommand\RULEINSTANCE{規則インスタンス}
+
+\newcommand\RES{\mathit{res}}
+
+
+\newcommand{\sqle}{\sqsubseteq}
+\newcommand{\restr}{\upharpoonright}
+\newcommand{\fix}{{\it fix}}
+\newcommand{\floor}[1]{\lfloor{#1}\rfloor}
+
+\newcommand{\den}[1]{[\![{#1}]\!]}
+
+\newcommand{\state}{状態} % state
+
+
+\newcommand{\cpo}{cpo} % cpo
+\newcommand{\pfp}{前不動点} % prefixed point
+\newcommand{\lpfp}{最小\pfp} % least prefixed point
+
+\newcommand{\omegachain}{$\omega$鎖} % omega chain
+\newcommand{\inclusive}{包括的} % inclusive
+\newcommand{\inclusiveness}{包括性} % inclusiveness
+
+\newcommand{\dirimage}{順像} % direct image
+
+\newcommand{\omonic}{順序モニック} % order-monic
+
+\newcommand{\liftingTranslation}{持ち上げ} % lifting
+\newcommand{\sumt}{直和} % sum
+\newcommand{\injection}{入射} % injection
+
+
+\newcommand{\iffdef}{\stackrel{\rm def}{\Leftrightarrow}}
+
+\newcommand{\typint}{{\bf int}}
+\newcommand{\typ}{{\bf type}}
+\newcommand{\typfun}{\to}
+
+\newcommand{\bfREC}{{\bf REC}}
+
+\newcommand{\Nat}{{\bf N}}
+\newcommand{\Natu}{{\bf N}}
+
+\newcommand{\Var}{{\bf Var}}
+\newcommand{\Env}{{\bf Env}}
+\newcommand{\ifex}{{\bf if}}
+\newcommand{\thenex}{{\bf then}}
+\newcommand{\elseex}{{\bf else}}
+\newcommand{\fst}{{\bf fst}}
+\newcommand{\snd}{{\bf snd}}
+\newcommand{\letex}{{\bf let}}
+\newcommand{\inex}{{\bf in}}
+\newcommand{\recex}{{\bf rec}}
+\newcommand{\ifte}[3]{\ifex\ {#1}\ \thenex\ {#2}\ \elseex\ {#3}}
+\newcommand{\letin}[2]{\letex\ {#1}\ \inex\ {#2}}
+\newcommand{\rec}[1]{\recex\ {#1}}
+\newcommand{\op}{{\bf op}}
+
+\newcommand{\inl}{{\bf inl}}
+\newcommand{\inr}{{\bf inr}}
+\newcommand{\caseex}{{\bf case}}
+\newcommand{\caseof}[3]{\caseex\ {#1}\ {\bf of}\ {#2},\ {#3}}
+
+
+\newcommand{\eden}[1]{\den{#1}^e}
+\newcommand{\lden}[1]{\den{#1}^l}
+
+\newcommand{\lesim}{\lesssim}
+
+\newcommand{\termlocation}{プログラム変数}
+\newcommand{\product}{直積} % product
+\newcommand{\eager}{先行} % eager
+\newcommand{\lazy}{遅延} % lazy
+\newcommand{\numeral}{数を表す定数} % numeral
+\newcommand{\adequacy}{妥当性} % adequacy
+\newcommand{\adequate}{妥当} % adequate
+\newcommand{\fullabst}{完全抽象性} % full abstraction
+\newcommand{\fullyabst}{完全に抽象的} % fully abstract
+\newcommand{\cform}{標準形} % canonical form
+\newcommand{\environment}{環境} % environment
+\newcommand{\denot}{表示} % denotation
+\newcommand{\opconv}{操作的収束} % operational convergence
+\newcommand{\deconv}{表示的収束} % denotational convergence
+\newcommand{\logrel}{論理関係} % logical relation
+\newcommand{\lift}{持ち上げ} % lifting
+\newcommand{\observation}{観測} % observation
+\newcommand{\sequentiality}{逐次性} % sequentiality
+\newcommand{\sequential}{逐次的} % sequential
+\newcommand{\context}{文脈} % context
+\newcommand{\parallelor}{並行選言} % parallel or
+
+\newcommand{\wellformed}{well-formed} % well-formed
+
+%%% Chapter 12
+
+\newcommand{\informationsystem}{情報システム}
+\newcommand{\subsystem}{部分システム}
+\newcommand{\informationsystemYomi}{じょうほうしすてむ}
+\newcommand{\scottdomain}{Scott領域}
+\newcommand{\scottdomainYomi}{すこっとりょういき}
+
+\newcommand{\recursivedomainequation}{再帰領域方程式}
+\newcommand{\domainequation}{領域方程式}
+\newcommand{\recursiveequation}{再帰方程式}
+
+\newcommand{\recursivetype}{再帰型}
+\newcommand{\recursivetypeYomi}{さいきかた}
+
+\newcommand{\liftedfunctionspace}{持ち上げ関数空間} %% \cmt{西村}{用語を統一}
+
+\newcommand{\lambdacalculus}{$\lambda$計算}
+
+\newcommand{\completepartialorder}{\cpo}
+
+\newcommand{\entailment}{帰結}
+\newcommand{\consistency}{整合}
+\newcommand{\consistent}{整合的}
+
+\newcommand{\predomain}{前領域}
+\newcommand{\closedfamily}{閉集合族}
+
+% rather generic math defs
+\newcommand{\Bf}[1]{{\bf #1}}
+\renewcommand{\mc}[1]{{\mathcal #1}}
+\newcommand{\lam}[1]{\lambda #1.~}
+\newcommand{\fa}[1]{\forall #1.~}
+\newcommand{\ex}[1]{\exists #1.~}
+\newcommand{\ol}[1]{\overline{#1}}
+\newcommand{\arrow}{\rightarrow}
+\newcommand{\Arrow}{\Rightarrow}
+\newcommand{\FIN}{\mathit{Fin}}
+\newcommand{\subseteqfin}{\mathbin{\subseteq^{\mathit{fin}}}}
+\newcommand{\elements}{要素}
+\newcommand{\ile}{\trianglelefteq}
+\newcommand{\INJECTION}{\mathit{inj}}
+\newcommand{\PROJECTION}{\mathit{proj}}
+
+% math defs specific to this book
+\newcommand{\Con}{{\rm Con}}
+\newcommand{\lifting}[1]{\lfloor #1 \rfloor}
+
+\newenvironment{choice}{\left\{\begin{array}{ll}}{\end{array}\right.}
+
+% \newcommand\OR{\mathbin{\text{or}}}
+
+\newcommand{\mA}{\mc A}
+\newcommand{\mB}{\mc B}
+\newcommand{\mC}{\mc C}
+\newcommand{\mD}{\mc D}
+
+\newcommand{\IS}{\mathit{IS}}
+
+\newcommand{\approximablemapping}{近似可能関数}
+\newcommand{\approximablerelation}{近似可能関係}
+\newcommand{\liftin}[1]{\lfloor #1 \rfloor}
+
+%%%%%%%%%%%% Appendix A
+\newcommand\termtidy{整った}
+\newcommand\converge{{\downarrow}}
+\newcommand\diverge{{\ndownarrow}}
+\newcommand\codecmt[1]{\mbox{\% {\bf #1}}}
+\newcommand\encode[1]{\#{#1}}
+\newcommand\MKPAIR{\mathrm{mkpair}}
+\newcommand\SG{\mathrm{sg}}
+\newcommand\LEFT{\mathrm{left}}
+\newcommand\RIGHT{\mathrm{right}}
+\newcommand\CMKPAIR{\mathrm{Mkpair}}
+\newcommand\CLEFT{\mathrm{Left}}
+\newcommand\CRIGHT{\mathrm{Right}}
+
+\newcommand\Encode[1]{\#({#1})}
+\newcommand\MKLOC{\mathrm{mkloc}}
+\newcommand\MKNUM{\mathrm{mknum}}
+\newcommand\MKSUM{\mathrm{mksum}}
+\newcommand\MKLEQ{\mathrm{mkleq}}
+\newcommand\MKNEG{\mathrm{mkneg}}
+\newcommand\MKOR{\mathrm{mkor}}
+\newcommand\MKIF{\mathrm{mkif}}
+\newcommand\MKSEQ{\mathrm{mkseq}}
+\newcommand\MKASSIGN{\mathrm{mkassign}}
+\newcommand\MKEXIST{\mathrm{mkexistential}}
+\newcommand\MKAND{\mathrm{mkand}}
+\newcommand\MKEQ{\mathrm{mkeq}}
+\newcommand\FunCmd[1]{\{{#1}\}}
+\newcommand\FUNCMDC{\FunCmd{c}}
+\newcommand\PROVABLE{\mathbf{Provable}}
+\newcommand\VALID{\mathbf{Valid}}
+\newcommand\TRUTH{\mathbf{Truth}}
+\newcommand\SIM{\mathit{SIM}}
+\newcommand\PLUSASSN{\mathrm{PlusAssn}}
+\newcommand\TIMESASSN{\mathrm{TimesAssn}}
+\newcommand\RANGE{\mathrm{Rge}}
+\newcommand\VALIDNONEQ{\mathbf{ValidNonEq}}
+
+% % %%% Local Variables:
+% % %%% mode: japanese-latex
+% % %%% TeX-master: "main"
+% % %%% End:

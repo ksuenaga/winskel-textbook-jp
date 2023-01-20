@@ -1,0 +1,20 @@
+# From https://hackmd.io/@anqou/BJ8J1IPDj
+
+on:
+  push:
+
+env:
+  FILENAME: correction/correction.tex
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    container: aruneko/texlive
+    steps:
+      - name: Checkout git repo
+        uses: actions/checkout@v2
+      - name: Build a PDF file by latexmk
+        run: latexmk $FILENAME.tex
+      - name: Create a release
+        uses: softprops/action-gh-release@v1
+        with:
+          files: ${{ env.FILENAME }}.pdf
