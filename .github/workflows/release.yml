@@ -8,7 +8,7 @@ env:
 jobs:
   release:
     runs-on: ubuntu-latest
-    container: aruneko/texlive
+    container: aruneko/texlive@sha256:3e42b87810545a1241f0014277c93d47e1b84c74ccf73e91c031976a8f88673b
     steps:
       - name: Checkout git repo
         uses: actions/checkout@v2
