@@ -1,3 +1,4 @@
+$ENV{'TEXINPUTS'} = './correction//;';
 $latex = 'platex';
 $bibtex = 'jbibtex';
 $dvipdf = 'dvipdfmx %O -o %D %S';
