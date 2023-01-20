@@ -15,8 +15,15 @@ jobs:
         uses: actions/checkout@v2
       - name: Build a PDF file by latexmk
         run: latexmk -r $RCFILENAME $FILENAME.tex
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: correction.pdf
-          path: correction/
+      - name: Upload artifact for github pages
+        uses: maxheld83/ghpages@v0.3.0
+        env:
+          BUILD_DIR: correction/
+          GH_PAT: ${{ secrets.GH_PAT }}
+      # - name: Upload artifact
+      #   uses: actions/upload-artifact@v3
+      #   with:
+      #     # actions/upload-artifact requires 'name' does not contain '/'
+      #     # name: {{ env.$FILENAME.tex }}
+      #     name: correction.pdf
+      #     path: correction/
