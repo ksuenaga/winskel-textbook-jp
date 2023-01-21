@@ -1,9 +1,5 @@
 {% include head.html %}
 
-# 『プログラミング言語の形式的意味論』サポートサイト
-
-[Glynn Winskel 著，末永幸平 監訳，勝股審也，中澤巧爾，西村進，前田敦司訳『プログラミング言語の形式的意味論入門』（丸善出版, 2023）](https://www.maruzen-publishing.co.jp/item/?book_no=304793)のサポートサイトです．
-
 ## ご購入はこちら
 
 [丸善](https://www.maruzen-publishing.co.jp/item/?book_no=304793) | [Amazon](https://www.amazon.co.jp/dp/4621307630) | [紀伊国屋書店](https://www.kinokuniya.co.jp/f/dsg-01-9784621307632) | [honto](https://honto.jp/netstore/pd-book_32140501.html) | [楽天ブックス](https://books.rakuten.co.jp/rb/17362338/) | [ヨドバシ.com](https://www.yodobashi.com/product/100000009003657539/) | [Honya Club](https://www.honyaclub.com/shop/g/g20709850/) | [Yahoo!ショッピング](https://store.shopping.yahoo.co.jp/windybooks/s-9784621307632.html)

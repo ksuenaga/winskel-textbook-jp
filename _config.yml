@@ -1,5 +1,6 @@
-# theme: jekyll-theme-minimal
-# theme: jekyll-theme-cayman
+theme: jekyll-theme-cayman
+title: 『プログラミング言語の形式的意味論入門』<br />サポートサイト
+description: Glynn Winskel 著，末永幸平 監訳，勝股審也，中澤巧爾，西村進，前田敦司訳『プログラミング言語の形式的意味論入門』（丸善出版, 2023）のサポートサイトです．
 
 # gems:
 #   - jekyll-pdf
