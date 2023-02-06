@@ -59,10 +59,17 @@
 \item 「本書の使い方」の段落において第13章と第14章に言及がありますが，本翻訳ではこれらの章は割愛されています．
 \end{itemize}
 
+\section*{第1章}
+
+\begin{itemize}
+\item P.3, 1.2節，第2段落: 「$X$と$Y$が等しいことを示すの方法の一つである」とあるのは「$X$と$Y$が等しいことを示す方法の一つである」の誤りです．
+\item P.9, 1.3節，第4段落: 「$X$から$Y$の部分関数」とあるのは「$X$から$Y$への部分関数」の誤りです．
+\end{itemize}
+
 \section*{第2章}
 
 \begin{itemize}
-  \item 22ページの $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
+  \item P.22, 2.3節: $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
     \infrule
     {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
     {\tuple{b_0 \land b_1, \sigma} \arrow \Tfalse}
@@ -71,10 +78,79 @@
     {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
     {\tuple{b_0 \land b_1, \sigma} \arrow \Ttrue}
     の誤りです．
+  \item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
+  \item P.25, 2.5節，第3段落: 「状態を変えずにすぐ停止しするだろう」とあるのは「状態を変えずにすぐ停止するだろう」の誤りです．
+  \item P.29, 2.6節, 第2段落:
+    「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
+    態$\sigma'$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
+    の評価によって式$a_0'+a_1$と状態$\sigma'$が得られる．」は
+    「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
+    態$\sigma$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
+    の評価によって式$a_0'+a_1$と状態$\sigma$が得られる．」の誤りです．
+\end{itemize}
+
+\section*{第3章}
+
+\begin{itemize}
+\item P.35, 3.2節, 第2段落: 「すべての位置$X$について」は「すべてのプログラム変数$X$について」の誤りです．
+\item P.41,
+  3.3節:「$\tuple{\text{Euclid},\sigma''}\rightarrow\sigma''$とな
+  る$\sigma''$が存在する」は
+  「$\tuple{\text{Euclid},\sigma''}\rightarrow\sigma'$となる$\sigma'$が
+  存在する」の誤りです．
+\item P.46, 3.4節:「性質が偽となる最小の導出が存在するという仮定」は「性質が偽となる極小の導出が存在するという仮定」の誤りです．
+  また，命題3.12の証明において，「最小の導出$d$が存在して」は「極小の導出$d$が存在して」の誤り，「$d$の最小性に矛盾する」は「$d$の極小性に矛盾する」です．
+\item P.46, 3.4節, 命題3.12の証明:「$\exists{\sigma,\sigma'\in\Sigma}.\;\Vdash\tuple{w,\sigma}\rightarrow\sigma'$」は「$\exists{\sigma,\sigma'\in\Sigma}.\; d \Vdash\tuple{w,\sigma}\rightarrow\sigma'$」の誤りです．
+\item P.46, 3.4節, 命題3.12の証明:
+  \[
+    d =
+    \infer
+    {\tuple{\mathbf{while\ true\ do}\ c, \sigma}\rightarrow \sigma'}
+    {
+      \infer
+      {\tuple{\mathbf{true},\sigma}\rightarrow\mathbf{true}}
+      {\vdots}
+      &
+      \infer
+      {\tuple{c,\sigma}\rightarrow\sigma''}
+      {\vdots}
+      &
+      \infer
+      {\tuple{\mathbf{while\ true\ do}\ c,\sigma''}\rightarrow\sigma'}
+      {\vdots}
+    }
+  \]
+  は
+  \[
+    d =
+    \infer
+    {\tuple{\mathbf{while\ true\ do}\ \Cskip, \sigma}\rightarrow \sigma'}
+    {
+      \infer
+      {\tuple{\mathbf{true},\sigma}\rightarrow\mathbf{true}}
+      {\vdots}
+      &
+      \infer
+      {\tuple{\Cskip,\sigma}\rightarrow\sigma}
+      {\vdots}
+      &
+      \infer
+      {\tuple{\mathbf{while\ true\ do}\ \Cskip,\sigma}\rightarrow\sigma'}
+      {\vdots}
+    }
+  \]
+  の誤りです．
+\item P.46, 3.5節:「コマンド内で，代入の左辺に現れる位置の集合」は「コマンド内で，代入の左辺に現れるプログラム変数の集合」の誤りです．
+\item P.47, 3.5節:「実際，整礎な集合の任意の空でない部分集合には最小の
+  要素が存在するという命題3.7の証明の中では，暗黙のうちに自然数の帰納的
+  な定義を用いて，空でない集合中に最小の要素を持つ列を構成した．」は
+  「実際，整礎な集合の任意の空でない部分集合には極小の要素が存在すると
+  いう命題3.7の証明の中では，暗黙のうちに自然数の帰納的な定義を用いて，
+  空でない集合中に極小の要素を持つ列を構成した．」の誤りです．
 \end{itemize}
 
 \section*{謝辞}
 
-本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様．
+本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様．
 
 \end{document}
