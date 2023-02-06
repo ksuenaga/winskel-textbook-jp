@@ -16,11 +16,7 @@
 
 ## 正誤表
 
-[こちらから](correction/correction.pdf)
-
-## 正誤表の更新履歴
-
-今の所誤りは発見されていません．
+[こちらから](correction/correction.pdf)（最終更新: 2023年2月6日）
 
 ## 翻訳者 Web サイト
 
