@@ -56,11 +56,25 @@
 \section*{まえがき}
 
 \begin{itemize}
-  \item 「本書の使い方」の段落において第13章と第14章に言及がありますが，本翻訳ではこれらの章は割愛されています．
+\item 「本書の使い方」の段落において第13章と第14章に言及がありますが，本翻訳ではこれらの章は割愛されています．
+\end{itemize}
+
+\section*{第2章}
+
+\begin{itemize}
+  \item 22ページの $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
+    \infrule
+    {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
+    {\tuple{b_0 \land b_1, \sigma} \arrow \Tfalse}
+    とあるのは
+    \infrule
+    {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
+    {\tuple{b_0 \land b_1, \sigma} \arrow \Ttrue}
+    の誤りです．
 \end{itemize}
 
 \section*{謝辞}
 
-本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様．
+本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様．
 
 \end{document}
