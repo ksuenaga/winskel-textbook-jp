@@ -91,6 +91,18 @@
 
 \section*{第3章}
 
+\newcommand{\AexpBinPropB}{
+  \forall{a_0,a_1\in\mathbf{Aexp},\sigma\in\Sigma,m,n\in\mathbf{N}}. \\ &
+  \tuple{a_0,\sigma}\rightarrow m \AND
+  \tuple{a_1,\sigma}\rightarrow n \AND
+}
+
+\newcommand{\BexpBinProp}{
+  \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}. \\ &
+  \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND
+  \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND
+}  
+
 \begin{itemize}
 \item P.35, 3.2節, 第2段落: 「すべての位置$X$について」は「すべてのプログラム変数$X$について」の誤りです．
 \item P.41,
@@ -147,7 +159,60 @@
   「実際，整礎な集合の任意の空でない部分集合には極小の要素が存在すると
   いう命題3.7の証明の中では，暗黙のうちに自然数の帰納的な定義を用いて，
   空でない集合中に極小の要素を持つ列を構成した．」の誤りです．
+\item P.47, 問題3.13:「右辺の中に現れる位置の集合」は「右辺の中に現れる
+  プログラム変数の集合」の誤りです．
 \end{itemize}
+
+% \section*{第4章}
+
+% \begin{itemize}
+%   \item P.53, 4.2節: 以下の規則
+%   \[
+%     \infer
+%     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
+%     {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c1:\mathbf{Com}}
+%   \]
+%   は
+%   \[
+%     \infer
+%     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
+%     {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c_1:\mathbf{Com}}
+%   \]
+%   の誤りです．
+% \item P.55, 4.3.2節: $p(\Ttrue, \sigma,\Ttrue)$は$P(\Ttrue, \sigma, \Ttrue)$の誤りです．
+% \item P.56, 上から9行目:
+%   $m \not\le n \Rightarrow P(a_0 \not\le a_1,\sigma,\mathbf{false})$
+%   は
+%   $m \not\le n \Rightarrow P(a_0 \le a_1,\sigma,\mathbf{false})$
+%   の誤りです．
+% \item P.56, 上から14行目:
+%   \[
+%     \begin{array}{ll}
+%     \AND\\
+%     \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
+%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+%       \AND\\
+%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
+%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+%     \end{array}
+%   \]
+%   は
+%   \[
+%     \begin{array}{ll}
+%     \AND\\
+%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
+%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+%       \AND\\
+%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
+%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+%     \end{array}
+%   \]
+%   の誤りです．
+% \item P.58, 上から9行目:
+%   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
+%   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma',\sigma''\in\Sigma$とする．」
+%   の誤りです．
+% \end{itemize}
 
 \section*{謝辞}
 
