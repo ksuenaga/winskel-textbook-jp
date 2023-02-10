@@ -4,7 +4,7 @@
 
 \interfootnotelinepenalty=10000
 
-\usepackage{amsmath,amssymb,amsthm,algorithm,algpseudocode,color,bcprules,url}
+\usepackage{amsmath,stmaryrd,amssymb,amsthm,algorithm,algpseudocode,color,bcprules,url}
 \usepackage{proof}
 \usepackage{enumerate}
 \usepackage{mathtools}
@@ -15,10 +15,6 @@
 \usepackage{enumerate}
 \usepackage[inference]{semantic}
 \usepackage[dvipdfmx]{graphicx}
-
-\usepackage{enumerate}
-\usepackage[inference]{semantic}
-
 
 \title{『プログラミング言語の形式的意味論』正誤表}
 \author{末永 幸平 \and 勝股 審也 \and 中澤 巧爾 \and 西村 進 \and 前田 敦司}
@@ -252,6 +248,46 @@
     がいえる．
   \end{quote}
   の誤りです．（証明中のアイテムへの参照が壊れておりました．．．）
+\end{itemize}
+
+\section*{第5章}
+
+\begin{itemize}
+\item P.68,
+  「$\mathbf{Bexp}$の表示」の部分において，「\termbooleanexpression{}の
+  意味関数は，連言$\wedge_T$,
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$T$上の論理演算を用いて与
+  えられる．」は「\termbooleanexpression{}の意味関数は，連
+  言$\wedge_T$,
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$\mathbf{T}$上の論理演算
+  を用いて与えられる．」の誤りです．
+\item P.69, 「$\mathbf{Com}$の表示」の部分において，
+  \begin{align*}
+      \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
+                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+      = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
+                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+  \end{align*}
+  は
+  \begin{align*}
+      \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
+                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+      = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
+                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+  \end{align*}
+  の誤りです．また，これに続く
+  \begin{align*}
+    \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
+                   (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
+                 & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{false} \}
+  \end{align*}
+  は
+  \begin{align*}
+    \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
+                   (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
+                 & \{(\sigma,\sigma)\mid \beta(\sigma)=\mathbf{false} \}
+  \end{align*}
+  の誤りです．
 \end{itemize}
 
 \section*{謝辞}
