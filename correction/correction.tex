@@ -163,56 +163,74 @@
   プログラム変数の集合」の誤りです．
 \end{itemize}
 
-% \section*{第4章}
+\section*{第4章}
 
-% \begin{itemize}
-%   \item P.53, 4.2節: 以下の規則
-%   \[
-%     \infer
-%     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
-%     {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c1:\mathbf{Com}}
-%   \]
-%   は
-%   \[
-%     \infer
-%     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
-%     {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c_1:\mathbf{Com}}
-%   \]
-%   の誤りです．
-% \item P.55, 4.3.2節: $p(\Ttrue, \sigma,\Ttrue)$は$P(\Ttrue, \sigma, \Ttrue)$の誤りです．
-% \item P.56, 上から9行目:
-%   $m \not\le n \Rightarrow P(a_0 \not\le a_1,\sigma,\mathbf{false})$
-%   は
-%   $m \not\le n \Rightarrow P(a_0 \le a_1,\sigma,\mathbf{false})$
-%   の誤りです．
-% \item P.56, 上から14行目:
-%   \[
-%     \begin{array}{ll}
-%     \AND\\
-%     \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
-%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
-%       \AND\\
-%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
-%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
-%     \end{array}
-%   \]
-%   は
-%   \[
-%     \begin{array}{ll}
-%     \AND\\
-%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
-%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
-%       \AND\\
-%       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
-%       \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
-%     \end{array}
-%   \]
-%   の誤りです．
-% \item P.58, 上から9行目:
-%   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
-%   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma',\sigma''\in\Sigma$とする．」
-%   の誤りです．
-% \end{itemize}
+\begin{itemize}
+  \item P.53, 4.2節: 以下の規則
+  \[
+    \infer
+    {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
+    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c1:\mathbf{Com}}
+  \]
+  は
+  \[
+    \infer
+    {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
+    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c_1:\mathbf{Com}}
+  \]
+  の誤りです．
+\item P.55, 4.3.2節: $p(\Ttrue, \sigma,\Ttrue)$は$P(\Ttrue, \sigma, \Ttrue)$の誤りです．
+\item P.56, 上から9行目:
+  $m \not\le n \Rightarrow P(a_0 \not\le a_1,\sigma,\mathbf{false})$
+  は
+  $m \not\le n \Rightarrow P(a_0 \le a_1,\sigma,\mathbf{false})$
+  の誤りです．
+\item P.56, 上から14行目:
+  \[
+    \begin{array}{ll}
+    \AND\\
+    \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+      \AND\\
+      \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+    \end{array}
+  \]
+  は
+  \[
+    \begin{array}{ll}
+    \AND\\
+      \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+      \AND\\
+      \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+    \end{array}
+  \]
+  の誤りです．
+\item P.58, 上から9行目:
+  「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
+  「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma',\sigma''\in\Sigma$とする．」
+  の誤りです．
+\item P.60, 問題4.10:
+  \[
+    \tuple{c_0;c_1,\sigma}\rightarrow_1^*\sigma'
+    {{\iff}_{\mathit{def}}}\
+    \exists{\sigma''}.\;\tuple{c_0,\sigma}\rightarrow_1^*\sigma''\AND
+    \tuple{c_1,\sigma''}\rightarrow_1^*\sigma'
+  \]
+  は
+  \[
+    \tuple{c_0;c_1,\sigma}\rightarrow_1^*\sigma' \iff
+    \exists{\sigma''}.\;\tuple{c_0,\sigma}\rightarrow_1^*\sigma''\AND
+    \tuple{c_1,\sigma''}\rightarrow_1^*\sigma'
+  \]
+  の誤りです．（左辺に現れる関
+  係${\rightarrow}_1^{*}$は${\rightarrow}_1$の反射推移閉包としてすでに
+  定義されており，ここは左辺の関係を右辺で定義するという趣旨ではありま
+  せんでした．）
+\item P.62, 
+\end{itemize}
 
 \section*{謝辞}
 
