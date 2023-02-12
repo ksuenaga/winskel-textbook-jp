@@ -4,7 +4,7 @@
 
 \interfootnotelinepenalty=10000
 
-\usepackage{amsmath,amssymb,amsthm,algorithm,algpseudocode,color,bcprules,url}
+\usepackage{amsmath,stmaryrd,amssymb,amsthm,algorithm,algpseudocode,color,bcprules,url}
 \usepackage{proof}
 \usepackage{enumerate}
 \usepackage{mathtools}
@@ -15,10 +15,6 @@
 \usepackage{enumerate}
 \usepackage[inference]{semantic}
 \usepackage[dvipdfmx]{graphicx}
-
-\usepackage{enumerate}
-\usepackage[inference]{semantic}
-
 
 \title{『プログラミング言語の形式的意味論』正誤表}
 \author{末永 幸平 \and 勝股 審也 \and 中澤 巧爾 \and 西村 進 \and 前田 敦司}
@@ -253,6 +249,268 @@
   \end{quote}
   の誤りです．（証明中のアイテムへの参照が壊れておりました．．．）
 \end{itemize}
+
+\section*{第5章}
+
+\begin{itemize}
+\item P.68,
+  「$\mathbf{Bexp}$の表示」の部分において，「\termbooleanexpression{}の
+  意味関数は，連言$\wedge_T$,
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$T$上の論理演算を用いて与
+  えられる．」は「\termbooleanexpression{}の意味関数は，連
+  言$\wedge_T$,
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$\mathbf{T}$上の論理演算
+  を用いて与えられる．」の誤りです．
+\item P.69, 「$\mathbf{Com}$の表示」の部分において，
+  \begin{align*}
+      \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
+                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+      = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
+                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+  \end{align*}
+  は
+  \begin{align*}
+      \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
+                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+      = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
+                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+  \end{align*}
+  の誤りです．また，これに続く
+  \begin{align*}
+    \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
+                   (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
+                 & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{false} \}
+  \end{align*}
+  は
+  \begin{align*}
+    \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
+                   (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
+                 & \{(\sigma,\sigma)\mid \beta(\sigma)=\mathbf{false} \}
+  \end{align*}
+  の誤りです．
+\item P.70, 上から3行目:
+  \[
+    \begin{array}{l}
+      \exists{\sigma''}\ \beta(\sigma)=\mathbf{true}\AND
+      (\sigma,\sigma'')\in\gamma \AND
+      (\sigma'',\sigma')\in\varphi
+    \end{array}
+  \]
+  は
+  \[
+    \begin{array}{l}
+      \exists{\sigma''}. \beta(\sigma)=\mathbf{true}\AND
+      (\sigma,\sigma'')\in\gamma \AND
+      (\sigma'',\sigma')\in\varphi
+    \end{array}
+  \]
+  の誤りです．（本書では量化子の後に必ずピリオドをつける構文を使ってい
+  ます．1.1節参照．）また，それに続く
+  \[
+    (\sigma,\sigma)\mid  \beta(\varphi)=\mathbf{false}
+  \]
+  は
+  \[
+    (\sigma,\sigma)\mid  \beta(\sigma)=\mathbf{false}
+  \]
+  の誤りです．
+\item P.70, $R$の定義の右辺:
+  \begin{align*}
+    R = {} &\{(\{(\sigma'',\sigma)\}/(\sigma,\sigma'))\mid
+             \beta(\sigma)=\mathbf{true}\AND
+             (\sigma,\sigma'')\in\gamma \} \cup \\
+           &\{(\emptyset/(\sigma,\sigma))\mid \beta(\sigma)=\mathbf{false}\}
+  \end{align*}
+  は
+  \begin{align*}
+    R = {} &\{(\{(\sigma'',\sigma')\}/(\sigma,\sigma'))\mid
+             \beta(\sigma)=\mathbf{true}\AND
+             (\sigma,\sigma'')\in\gamma \} \cup \\
+           &\{(\emptyset/(\sigma,\sigma))\mid \beta(\sigma)=\mathbf{false}\}
+  \end{align*}
+  の誤りです．
+\item P.72, 補題5.3の証明:
+  \[
+    P(a)\Longleftrightarrow
+    \denotation{A}{a}=\{ (\sigma,n) \mid   \tuple{a,\sigma}\rightarrow n\}
+  \]
+  は
+  \[
+    P(a)\Longleftrightarrow_{\mathit{def}}
+    \denotation{A}{a}=\{ (\sigma,n) \mid   \tuple{a,\sigma}\rightarrow n\}
+  \]
+  の誤りです．
+\item P.73, 構造帰納法による証明の $a \equiv X$ のケース:
+  \[
+    \begin{array}{l@{}l}
+      (\sigma, n)\in\denotation{A}{m}
+      & {} \Longleftrightarrow (\sigma\in\Sigma\AND n\equiv \sigma(X)) \\
+      & {} \Longleftrightarrow \tuple{X,\sigma}\rightarrow n
+    \end{array}
+  \]
+  は
+  \[
+    \begin{array}{l@{}l}
+      (\sigma, n)\in\denotation{A}{X}
+      & {} \Longleftrightarrow (\sigma\in\Sigma\AND n\equiv \sigma(X)) \\
+      & {} \Longleftrightarrow \tuple{X,\sigma}\rightarrow n
+    \end{array}
+  \]
+  の誤りです．
+\item P.74, 補題5.4の証明:
+    \[
+      P(b)\Longleftrightarrow
+      \denotation{B}{b}=\{ (\sigma,t) \mid   \tuple{b,\sigma}\rightarrow t\}
+    \]
+    は
+    \[
+      P(b)\Longleftrightarrow_{\mathit{def}}
+      \denotation{B}{b}=\{ (\sigma,t) \mid   \tuple{b,\sigma}\rightarrow t\}
+    \]
+    の誤りです．
+  \item P.76, 補題5.6の証明:
+    \[
+      P(c,\sigma,\sigma')
+      \Longleftrightarrow
+      (\sigma,\sigma')\in\denotation{C}{c}
+    \]
+    は
+    \[
+      P(c,\sigma,\sigma')
+      \Longleftrightarrow_{\mathit{def}}
+      (\sigma,\sigma')\in\denotation{C}{c}
+    \]
+    の誤りです．
+    また，その後ろの
+    \[
+      \tuple{b,\sigma}\rightarrow\mathbf{true}\AND
+      \tuple{c,\sigma}\rightarrow\sigma''\AND
+      P(c,\sigma,\sigma'') \AND
+      \tuple{w,\sigma''}\rightarrow\sigma'\AND
+      P(w,\sigma'',\sigma)
+    \]
+    は
+    \[
+      \tuple{b,\sigma}\rightarrow\mathbf{true}\AND
+      \tuple{c,\sigma}\rightarrow\sigma''\AND
+      P(c,\sigma,\sigma'') \AND
+      \tuple{w,\sigma''}\rightarrow\sigma'\AND
+      P(w,\sigma'',\sigma')
+    \]
+    の誤りです．
+  \item P.77, 定理5.7の証明:
+    \begin{align*}
+      \denotation{C}{c} = {}
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+        (\sigma,\sigma')\in\denotation{C}{c_0}\}\cup {} \\
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\AND
+        (\sigma,\sigma')\in\denotation{C}{c_0}\}  
+    \end{align*}
+    は
+    \begin{align*}
+      \denotation{C}{c} = {}
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+        (\sigma,\sigma')\in\denotation{C}{c_0}\}\cup {} \\
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\AND
+        (\sigma,\sigma')\in\denotation{C}{c_1}\}  
+    \end{align*}
+    の誤りです．
+  \item P.78, 定理5.7の証明:
+    \begin{align*}
+      \Gamma(\varphi) = {}
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+        (\sigma,\sigma')\in\varphi\circ\denotation{C}{c_0}\} \cup {} \\
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+    \end{align*}
+    は
+    \begin{align*}
+      \Gamma(\varphi) = {}
+      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+        (\sigma,\sigma')\in\varphi\circ\denotation{C}{c_0}\} \cup {} \\
+      & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+    \end{align*}
+    誤りです．それに続く
+    \begin{align*}
+      \theta_0 = {} & \emptyset, \\
+      \theta_{n+1} = {}
+                    & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+                      (\sigma,\sigma')\in\theta_n\circ\denotation{C}{c_0}\} \cup {}\\
+                    & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+    \end{align*}
+    は
+    \begin{align*}
+      \theta_0 = {} & \emptyset, \\
+      \theta_{n+1} = {}
+                    & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
+                      (\sigma,\sigma')\in\theta_n\circ\denotation{C}{c_0}\} \cup {}\\
+                    & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+    \end{align*}
+    の誤りです．
+  \item P.79, 定理5.7の証明:「帰納法の仮
+    定 (5.1) から$\tuple{c,\sigma''}\rightarrow\sigma$である．」は「帰
+    納法の仮定 (5.1) から$\tuple{c,\sigma''}\rightarrow\sigma'$である．」
+    の誤りです．
+  \item P.79, 問題5.8:
+    \begin{align*}
+      & \forall{i(0\leq i\leq n)}.\;
+        \denotation{B}{b}\sigma_i=\mathbf{true}\AND
+        \denotation{C}{c}\sigma_i=\sigma_{i+1}
+    \end{align*}
+    は
+    \begin{align*}
+      & \forall{i(0\leq i < n)}.\;
+        \denotation{B}{b}\sigma_i=\mathbf{true}\AND
+        \denotation{C}{c}\sigma_i=\sigma_{i+1}
+    \end{align*}
+    の誤りです．
+  \item P.80,
+    問題5.9:「$\tuple{c,\sigma}\rightarrow\sigma'\Leftarrow
+    \denotation{C}{c}\sigma=\sigma'$」は
+    「$\tuple{c,\sigma}\rightarrow\sigma' \iff
+    \denotation{C}{c}\sigma=\sigma'$」の誤りです．
+  \item P.82, 問題5.10:
+    「部分関数の集合$\Sigma\rightarrow\Sigma$」は
+    「部分関数の集合$\Sigma\PARTIAL\Sigma$」
+    の誤りです．
+  \item P.83,下から7行目:「規則のインスタンス$R$のもとで」は「規則イン
+    スタンスの集合$R$のもとで」の誤りです．
+  \item P.84, 定理5.11の証明:
+    \begin{align*}
+      f(\mathit{fix}(f))
+      = {} & f(\bigsqcup_{n\in\omega}f^n(\bot)) && \text {（$f$の連続性から）}\\
+      = {} & \bigsqcup_{n\in\omega}f^{n+1}(\bot) && \text {（$\bot$と$\bigsqcup$の定義から）}\\
+      = {} & (\bigsqcup_{n\in\omega}f^{n+1}(\bot))\sqcup \{\bot\} && \text {（$\bot = f^0(\bot)$より）}\\
+      = {} & \bigsqcup_{n\in\omega}f^n(\bot) && \text {（$\mathit{fix}(f)$の定義より）}\\
+      = {} & \mathit{fix}(f)
+    \end{align*}
+    の部分において，各行の$\text
+    {（\dots）}$は，その行の${=}$の右辺と，次の行の${=}$の右辺とがなぜ
+    等しいと言えるかの説明が書いてあります．例えば，「$\text
+    {（$f$の連続性から）}$」の部分
+    は，$f(\bigsqcup_{n\in\omega}f^n(\bot))$と
+    $\bigsqcup_{n\in\omega}f^{n+1}(\bot)$がなぜ等しいと言えるのかが書い
+    てあります．ただし，
+        \begin{align*}
+      f(\mathit{fix}(f))
+      = {} & f(\bigsqcup_{n\in\omega}f^n(\bot)) &&\\
+      = {} & \bigsqcup_{n\in\omega}f^{n+1}(\bot) && \text {（$f$の連続性から）}\\
+      = {} & (\bigsqcup_{n\in\omega}f^{n+1}(\bot))\sqcup \{\bot\} && \text {（$\bot$と$\bigsqcup$の定義から）}\\
+      = {} & \bigsqcup_{n\in\omega}f^n(\bot) &&  \text {（$\bot = f^0(\bot)$より）}\\
+      = {} & \mathit{fix}(f) &&  \text {（$\mathit{fix}(f)$の定義より）}\\
+    \end{align*}
+    のように各説明を一行ずつ下げて，各行の$\text{（\dots）}$が，その行
+    の${=}$の右辺と，その前の行の${=}$の右辺とが等しい理由を説明する方
+    が標準的かもしれません．
+  \item P.85, 下から6行目:「この考え方は以前にも，規則
+    の\terminstance{}の集合が連続な演算子を定めるのは」は「この考え方は
+    以前にも，規則の\terminstance{}の集合が連続な演算を定めるのは」の誤
+    りです．（原著の operator を，本書では「演算」と訳すことにしていま
+    す．）
+  \item P.86, 下から12行目: 「演算子$\widehat{R}$」は「演
+    算$\widehat{R}$」の誤りです．
+\end{itemize}
+
+
 
 \section*{謝辞}
 
