@@ -510,7 +510,69 @@
     算$\widehat{R}$」の誤りです．
 \end{itemize}
 
+\section*{第6章}
 
+\begin{itemize}
+\item P.95, 6.2.2節:
+  \[
+    A[a/i] \equiv - - - i - - - i - --
+  \]
+  は
+  \[
+    A[a/i] \equiv - - - a - - - a - --
+  \]
+  の誤りです．
+\item P.96, 6.2.2節, $\mathbf{Assn}$の元での代入の定義:
+  量化子を含む元での代入の定義が
+  \begin{align*}
+    (\forall{j}.A)[a/i] \equiv_{\mathit{def}} \forall{j}.(A[a/i]) \quad & (\exists{j}.A)[a/i] \equiv_{\mathit{def}} \exists{j}.(A[a/i])
+  \end{align*}
+  となっていますが，束縛変数が$i$であるケースを訳し忘れていました．
+  \begin{align*}
+    (\forall{j}.A)[a/i] \equiv_{\mathit{def}} \forall{j}.(A[a/i]) \quad & (\forall{i}.A)[a/i] \equiv_{\mathit{def}} \forall{i}.A\\
+    (\exists{j}.A)[a/i] \equiv_{\mathit{def}} \exists{j}.(A[a/i]) \quad & (\exists{i}.A)[a/i] \equiv_{\mathit{def}} \exists{i}.A
+  \end{align*}
+  の誤りです．
+\item P.98,
+  「表明$\mathbf{Assn}$の意味」の部分:「解釈関数の役割は，整数変数の解
+  釈として$N$内の値を与えることである．」は「解釈関数の役割は，整数変数
+  の解釈として$\mathbf{N}$内の値を与えることである．」の誤りです．
+\item P.104, 補題6.9:
+  \[
+    \sigma \models^I B[a/X] \iff \sigma[\DAexpv\sem{a}\sigma/X] \models^I B
+  \]
+  は
+  \[
+    \sigma \models^I B[a/X] \iff \sigma[\DAexp\sem{a}\sigma/X] \models^I B
+  \]
+  の誤りです．
+\item P.105,
+  補題6.9の証明の「代入の規則」の部分:「$\sigma \models^I B[a/X] \iff
+  \sigma[\DAexpv\sem{a}\sigma/X] \models^I
+  B$」は「$\sigma \models^I B[a/X] \iff \sigma[\DAexp\sem{a}\sigma/X]
+  \models^I B$」の誤りです．
+\item P.106, 定理6.11の証明, 「while
+  ループの規則」の部分:「$\models \preCond{A \land b} \land
+  \postCond{A}$」は「$\models \preCond{A \land b} c \postCond{A}$」の誤
+  りです．
+\item P.108, 下から14行目:
+  \begin{quote}
+    したがって，帰結の規則を用いれば
+    \[
+      \preCond{(X = n) \land (Y=1)} w \postCond{Y = n!}
+    \]
+    が成り立つことが分かる．
+  \end{quote}
+  は
+  \begin{quote}
+    したがって，帰結の規則を用いれば
+    \[
+      \preCond{(X = n) \land n \ge 0 \land (Y=1)} w \postCond{Y = n!}
+    \]
+    が成り立つことが分かる．
+  \end{quote}
+  の誤りです．
+\end{itemize}
 
 \section*{謝辞}
 
