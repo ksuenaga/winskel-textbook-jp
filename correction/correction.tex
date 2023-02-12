@@ -574,6 +574,132 @@
   の誤りです．
 \end{itemize}
 
+\section*{第7章}
+
+\begin{itemize}
+\item P.114, 脚注:
+  \begin{quote}
+    完全性定理は，述語論理の証明システムによって証明可能な表明は任意の
+    解釈のもとで妥当であることを主張している．
+  \end{quote}
+  は
+  \begin{quote}
+    完全性定理は，述語論理の証明システムは，任意の解釈のもとで妥当であ
+    るような表明をすべて証明できることを主張している．
+  \end{quote}
+  の誤りです．（原著の脚注は「完全性定理は，述語論理の証明システムによっ
+  て証明可能な表明は，任意の解釈のもとで妥当であるような表明と一致する」
+  とも読めるように思えるのですが，完全性定理の説明としては，「完全性定
+  理は，述語論理の証明システムは，任意の解釈のもとで妥当であるような表
+  明をすべて証明できることを主張している．」とするほうが良いように思え
+  ます．いずれにしても，「完全性定理は，述語論理の証明システムによって
+  証明可能な表明は任意の解釈のもとで妥当であることを主張している．」で
+  は述語論理の証明システムの健全性の説明となりますので，これは誤りで
+  す．）
+\item P.116: $\mathbf{Assn}$が ``expressive'' であることを，本書で
+  は$\mathbf{Assn}$が「表現可能」と訳しましたが，この訳語の選択はあまり
+  適当ではないかもしれませ
+  ん．$\mathbf{Assn}$が ``expressive'' とはP.116の定義にあるよう
+  に，$\mathbf{Assn}$
+  が任意のコマンド$c$と任意の事後条件$B$について，任意の解釈について最
+  弱自由事前条件をとなるような表明が$\mathbf{Assn}$で書けることを指しま
+  す．すなわち，最弱自由事前条件を表現できるというの
+  が ``expressiveness'' の趣旨なので，「表現力豊か」とでも訳すべきかも
+  しれません．
+\item P.118, 定理7.5の証明:
+  \[
+    \sigma \models^I  w\lrbra{c,B}^I
+    \Leftrightarrow
+    \DCom\lrbra{c}\sigma \models^I B
+  \]
+  は
+  \[
+    \sigma \models^I  w\lrbra{c,B}
+    \Leftrightarrow
+    \DCom\lrbra{c}\sigma \models^I B
+  \]
+  の誤りです．
+\item P.120, 上から3行目:
+  \begin{align*}
+    & \sigma \models^I A \text{ およびそのときに限り }
+      \models^I A[\bar{s}/\bar{X}]
+      \tag{$\ast$}
+  \end{align*}
+  とあるのは，記法の統一上は
+  \begin{align*}
+    & \sigma \models^I A \iff
+      \models^I A[\bar{s}/\bar{X}]
+      \tag{$\ast$}
+  \end{align*}
+  と書くべきところです．
+\item P.120, 上から5行目「この事実は構造帰納法で証明できる」の後にピリ
+  オドが抜けていました．
+\item P.121, 1行目:
+  \begin{align*}
+    \DCom\lrbra{c_0}\sigma_{i} = \sigma_{i+1} 
+    & ~\Leftrightarrow~
+      (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \wedge \neg w\lrbra{c_0,\Tfalse})
+    \\
+    & ~\Leftrightarrow~
+      (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \wedge \neg w\lrbra{c_0,\Tfalse})[\bar{s}_i/\bar{X}]
+    &&  (\ast)より.
+  \end{align*}
+  は
+  \begin{align*}
+    \DCom\lrbra{c_0}\sigma_{i} = \sigma_{i+1} 
+    & ~\Leftrightarrow~
+      \sigma_i \models^I (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \wedge \neg w\lrbra{c_0,\Tfalse})
+    \\
+    & ~\Leftrightarrow~
+      \models^I (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \wedge \neg w\lrbra{c_0,\Tfalse})[\bar{s}_i/\bar{X}]
+    &&  (\ast)より.
+  \end{align*}
+  の誤りです．
+\item P.122,
+  下から12行目:「$\preCond{w\lrbra{c,B}} c \postCond{B}$が成り立つ．」
+  は「$\vdash \preCond{w\lrbra{c,B}} c \postCond{B}$が成り立つ．」の誤
+  りです．
+\item P.123,
+  上から10行目:「$[ (b \wedge w\lrbra{c_0,B}) \lor (\neg b \wedge
+  w\lrbra{c_1,B})]$」は「$\sigma \models^I [ (b \wedge w\lrbra{c_0,B})
+  \lor (\neg b \wedge w\lrbra{c_1,B})]$」の誤りです．また，その後の「条
+  件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}c_0 \postCond{B}$が得
+  られる．」は「条件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}c
+  \postCond{B}$が得られる．」の誤りです．
+\item P.126, 一番下の行:「\emph{原始帰納的関数}」に原語が抜けていました．
+  「\emph{原始帰納的関数 (primitive recursive function)}」の誤りです．
+\item P.128, 下から4行目:
+  \begin{align*}
+    \mathit{vc}(\preCond{A}c_0; \preCond{D} c_1\postCond{B}) & =
+                                                               \mathit{vc}(\preCond{A}c \postCond{D}) \cup \mathit{vc}(\preCond{D}c\postCond{B})
+  \end{align*}
+  は
+  \begin{align*}
+    \mathit{vc}(\preCond{A}c_0; \preCond{D} c_1\postCond{B}) & =
+                                                               \mathit{vc}(\preCond{A}c_0 \postCond{D}) \cup \mathit{vc}(\preCond{D}c_1 \postCond{B})
+  \end{align*}
+  の誤りです．
+\item P.132,
+  \begin{align*}
+    \text{ ただし，}&\text{$\overline{b} = \set{\sigma \mid \sigma = \bot \mbox{または} \DBexp}$}\\
+  \end{align*}
+  は
+  \begin{align*}
+    \text{ ただし，}&\text{$\overline{b} =_{\mathit{def}} \set{\sigma \mid \sigma = \bot \mbox{または} \DBexp\sem{b}\sigma = \mathbf{true}}$}\\
+  \end{align*}
+  また，
+  「ただし$G \COL \PT \rightarrow \PT$は$G(p)(Q) =
+  (\overline{b} \cap \Pt\sem{c_0}(p(Q))) \cup (\overline{\neg b} \cap
+  Q)$で与えられる．」は
+  「ただし$G \COL \PT \rightarrow \PT$は$G(p)(Q) =
+  (\overline{b} \cap \Pt\sem{c}(p(Q))) \cup (\overline{\neg b} \cap
+  Q)$で与えられる．」の誤りです．
+\end{itemize}
+
 \section*{謝辞}
 
 本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様．
