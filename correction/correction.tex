@@ -75,6 +75,18 @@
     {\tuple{b_0 \land b_1, \sigma} \arrow \Ttrue}
     の誤りです．
   \item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
+  \item P.24,
+    問題2.7:「任意の状態$\sigma$について$\tuple{w,\sigma}\to \sigma'$と
+    なるような状態$\sigma'$は存在しないことを説明せよ」は，曖昧性のある
+    文でした．ここでの意図は，「どのような状態$\sigma$を取ってきても，
+    その$\sigma$に対して$\tuple{w,\sigma}\to \sigma'$が成り立つよう
+    な$\sigma'$は存在しない」ということです．「以下を満たす$\sigma'$は
+    存在しないことを証明せよ: 任意の状態$\sigma$につい
+    て$\tuple{w,\sigma}\to \sigma'$となる」という意味では\emph{ありませ
+      ん}．したがって，ここで証明すべきことは，「どのような状
+    態$\sigma,
+    \sigma'$を取ってきても，$\tuple{w,\sigma} \to \sigma'$は成り立たな
+    い」ということです．
   \item P.25, 2.5節，第3段落: 「状態を変えずにすぐ停止しするだろう」とあるのは「状態を変えずにすぐ停止するだろう」の誤りです．
   \item P.29, 2.6節, 第2段落:
     「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
@@ -204,6 +216,10 @@
     \end{array}
   \]
   の誤りです．
+\item P.56, 下から7行目:「特殊な\termruleinduction{}の\terminstance{}で
+  ある」とありますが，ここでの \terminstance{} は「規則インスタンス」と
+  呼んでいるものとは関係なく，「例」という意味の一般名詞としてのインス
+  タンスのつもりでした．混乱を招くので避けるべきでした．
 \item P.58, 上から9行目:
   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma',\sigma''\in\Sigma$とする．」
@@ -513,6 +529,52 @@
 \section*{第6章}
 
 \begin{itemize}
+\item P.92, 下から2行目:
+  \begin{quote}
+    コマンド$c$について，$\denotation{C}{c}\sigma$が未定義のとき
+    $\denotation{C}{c}\sigma = \bot$と書くことができて，部分関数の合成
+    に合わせて$\denotation{C}{c}\bot = \bot$と取ることにする．この
+    約束を採用すれば，$\bot$は任意の表明をみたすことになり，
+    部分正当性表明を表記するのがずいぶん簡単になる．
+  \end{quote}
+  は
+  \begin{quote}
+    コマンド$c$について，$\denotation{C}{c}\sigma$が未定義のと
+    き$\denotation{C}{c}\sigma = \bot$と書くことができる．部分関数の合
+    成の都合上，$\denotation{C}{c}\bot =
+    \bot$としよう．$\bot$が任意の表明をみたすという約束を採用するならば，
+    部分正当性表明を表記するのがずいぶん簡単になる．
+  \end{quote}
+  の誤りです．
+\item P.95, $\mathrm{FV}$の定義:
+  \begin{align*}
+    & \FV{n} =_{\mathit{def}} \FV{X} =_{\mathit{def}} \emptyset \\
+    & \FV{i} =_{\mathit{def}} \{i\} \\
+    & \FV{a_0 + a_1} =_{\mathit{def}} \FV{a_0 - a_1} =_{\mathit{def}} \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
+  \end{align*}
+  は
+  \begin{align*}
+    & \FV{n} = \FV{X} =_{\mathit{def}} \emptyset \\
+    & \FV{i} =_{\mathit{def}} \{i\} \\
+    & \FV{a_0 + a_1} = \FV{a_0 - a_1} = \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
+  \end{align*}
+  の誤りです．また，
+  \begin{align*}
+    & \FV{\Ttrue} =_{\mathit{def}} \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
+    & \FV{a_0 = a_1} =_{\mathit{def}} \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
+    & \FV{A_0 \wedge A_1} =_{\mathit{def}} \FV{A_0 \vee A_1} =_{\mathit{def}} \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
+    & \FV{\neg{A}} =_{\mathit{def}} \FV{A} \\
+    & \FV{\forall{i}.A} =_{\mathit{def}} \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
+  \end{align*}
+  は
+  \begin{align*}
+    & \FV{\Ttrue} = \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
+    & \FV{a_0 = a_1} = \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
+    & \FV{A_0 \wedge A_1} = \FV{A_0 \vee A_1} = \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
+    & \FV{\neg{A}} =_{\mathit{def}} \FV{A} \\
+    & \FV{\forall{i}.A} = \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
+  \end{align*}
+  の誤りです．
 \item P.95, 6.2.2節:
   \[
     A[a/i] \equiv - - - i - - - i - --
@@ -776,6 +838,14 @@
   は
   「$D_1 + \dots + D_k \rightarrow E$」
   の誤りです．
+\end{itemize}
+
+\section*{その他}
+
+\begin{itemize}
+\item 「規則インスタンス」と「規則のインスタンス」で訳語が揺れている箇
+  所があるようです．この2つは使い分けられているわけではなく，どちら
+  も ``rule instance'' の訳語を意図しています．
 \end{itemize}
 
 \section*{謝辞}
