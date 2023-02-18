@@ -840,6 +840,100 @@
   の誤りです．
 \end{itemize}
 
+\section*{第9章}
+
+\begin{itemize}
+\item P.159, 9.1節:
+  「整数$n$」は「整数$n \in \mathbf{N}$」の誤りです．なお，本書で
+  は$\mathbf{N}$は負の数を含む整数に対応する定数を表す$\mathbf{Aexp}$の
+  要素であることに注意してください．（P.15参照）
+\item P.164, 1行目:
+  \[
+    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(Z_0) \rightarrow z_1 \mid z_2)
+  \]
+  は
+  \[
+    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(z_0) \rightarrow z_1 \mid z_2)
+  \]
+  の誤りです．
+\item P.164, 下から3--5行目:
+  \[
+    \begin{array}{rcl}
+      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(n_1,m\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
+      \vdots\\
+      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(n_1,m\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
+    \end{array}
+  \]
+  は
+  \[
+    \begin{array}{rcl}
+      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(n_1,\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
+      \vdots\\
+      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(n_1,\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
+    \end{array}
+  \]
+  の誤りです．
+\item P.166, 一番下の行:
+  \begin{align*}
+    \delta  ~=~ & \mu \varphi. (\lambda m. \semva{t}\varphi\rho[m/x])\\
+    ~=~ & \FIX(\lambda \varphi. (\lambda m. \semva{t}\varphi\rho[m/x]))\\
+    ~=~ & \bigsqcup_{r \in \NUM} \delta^{(r)}.
+  \end{align*}
+  は
+  \begin{align*}
+    \delta  ~=~ & \mu \varphi. (\lambda m. \semva{t}\varphi\rho[m/x])\\
+    ~=~ & \FIX(\lambda \varphi. (\lambda m. \semva{t}\varphi\rho[m/x]))\\
+    ~=~ & \bigsqcup_{r \in \omega} \delta^{(r)}.
+  \end{align*}
+  の誤りです．
+\item P.167,
+  \begin{quote}
+    一般に，以下の等式
+    \[
+      \delta^{(r)}(m) = F(\delta^{(r-1)}(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
+    \]
+  \end{quote}
+  は
+  \begin{quote}
+    一般に，以下の等式
+    \[
+      \delta^{(r)}(m) = F(\delta^{(r-1)})(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
+    \]
+  \end{quote}
+  の誤りです．
+\item P.177, 一番上の行:
+  \[
+    \delta = \bigsqcup_{r \in \NUM} F^r(\bot)
+  \]
+  は
+  \[
+    \delta = \bigsqcup_{r \in \omega} F^r(\bot)
+  \]
+  の誤りです．
+\item P.177, 8行目:
+  \begin{quote}
+    任意の$i \in [1,k]$
+  \end{quote}
+  とあるのは
+  \begin{quote}
+    任意の$i \in \set{1,\dots,k}$
+  \end{quote}
+  の意味です．（P.140ではこの表記を用いていました．）なお，原書に忠実に訳すのであれば，「任意の$1 \le i \le k$」と書くべきところですが，これは任意にとられる変数が$i$であることが少しわかりにくいかもしれないと考え，上記のように翻訳してあります．
+\item P.177, 下から6行目:
+  「$r \in \NUM$に関する数学的帰納法」とあるのは「$r \in \omega$に関する数学的帰納法」の誤りです．
+\item P.179:
+  上から11行目の「$r \in \NUM$」は「$r \in \omega$」の誤りです．また，下から12行目の「$r \in \NUM$」は「$r \in \omega$」の誤りです．
+\item P.180:
+  \[
+    S \equiv \BFLET \BFREC A = t \BFAND B = u \BFIN v
+  \]
+  は
+  \[
+    S \equiv \BFLET \BFREC A \Leftarrow t \BFAND B \Leftarrow u \BFIN v
+  \]
+  の誤りです．（原書ではこちらの記法を用いています．また，本書でも10.1節ではこの記法を用いています．）
+\end{itemize}
+
 \section*{その他}
 
 \begin{itemize}
