@@ -976,6 +976,48 @@
   の誤りです．
 \end{itemize}
 
+\section*{第11章}
+
+\begin{itemize}
+\item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)} \COL t$」の誤りです．
+\item P.206, $\mathit{FV}$の定義:
+  「$\mathit{FV}(\fst(t)) =_{\mathit{def}} \mathit{FV}(\snd(t)) = \mathit{FV}(t)$」は「$\mathit{FV}(\fst(t)) = \mathit{FV}(\snd(t)) =_{\mathit{def}} \mathit{FV}(t)$」の誤りです．
+\item P.209, 表示的意味論の定義:
+  「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, v_1\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」は「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, v_2\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」の誤りです．
+\item P.212, 補題11.11の証明:
+  「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\Rightarrow\eden{c_2}\rho.\floor{(v_1,v_2)}$」は「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\Leftarrow\eden{c_2}\rho.\floor{(v_1,v_2)}$」の誤りです．また，「次の規則のとき:」に続く
+   \[
+     \infer{(t_1\ t_2)\to^e c_1}{
+       t_1\to^e\lambda x.t'_1
+       & t_2\to^e c_2
+       & t'_1[c_2/x] \to^e c}
+   \]
+   は
+   \[
+     \infer{(t_1\ t_2)\to^e c}{
+       t_1\to^e\lambda x.t'_1
+       & t_2\to^e c_2
+       & t'_1[c_2/x] \to^e c}
+   \]
+   の誤りです．
+ \item P.216--219:
+   「$[s_1/x_1,\ldots,s_k/x_k]$」とすべきところを「$[s_1/x_1,\ldots,x_k/x_k]$」としている箇所が9箇所あります．（P.216の1行目，2行目，4行目，5行目，7行目，9行目，下から5行目，P.217の6行目, P.219の3行目）
+ \item P.237, 問題11.28 (1): 「$\Omega=\rec{w.w}$のとき」は「$\Omega \equiv \rec{w.w}$のとき」とするほうが適当です．
+ \item P.237, 問題11.28
+   (3):「$d\lesim_\typint t \quad \Longleftrightarrow\quad \forall
+   n\in\Natu.d=\floor{n} \ \Rightarrow\ \to^l
+   n$」は「$d\lesim_\typint t \quad \Longleftrightarrow\quad \forall
+   n\in\Natu.d=\floor{n} \ \Rightarrow\ t \to^l n$」の誤りです．また，
+   「$d\lesim_{\tau_1\typfun\tau_2}t \quad \Longleftrightarrow\quad
+   \forall e,s.e\lesim_{\tau_1}s\ \Rightarrow\ d(e)\lesim_{\tau_2}(t
+   s)$」は「$d\lesim_{\tau_1\typfun\tau_2}t \quad
+   \Longleftrightarrow\quad \forall e,s.e\lesim_{\tau_1}s\
+   \Rightarrow\ d(e)\lesim_{\tau_2}(t\ s)$」の誤りです．
+
+
+
+\end{itemize}
+
 \section*{その他}
 
 \begin{itemize}
