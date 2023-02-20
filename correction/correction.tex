@@ -1013,8 +1013,58 @@
    s)$」は「$d\lesim_{\tau_1\typfun\tau_2}t \quad
    \Longleftrightarrow\quad \forall e,s.e\lesim_{\tau_1}s\
    \Rightarrow\ d(e)\lesim_{\tau_2}(t\ s)$」の誤りです．
+\end{itemize}
 
+\section*{第12章}
 
+\section*{付録A}
+
+\begin{itemize}
+\item P.274, 問題A.1: 「任意の数$n,m$について$f(n) =
+  m$と$\FUNCMDC(n) = m$が成り立つことを示せ」は「任意の数$n,m$につい
+  て$f(n) = m$と$\FUNCMDC(n) = m$が同値であることを示せ」の誤りです．
+\item P.276,
+  擬似コードの15行目:「\text{$c_1$が$S$ステップ以内に停止した}」は
+  「\text{$c_2$が$S$ステップ以内に停止した}」の誤りです．
+\item P.280, 定理A.12の証明:
+  \[
+    \begin{array}{lcl}
+      c \in \bar{H} &\iff& \FunCmd{c}(\Encode{c}) \diverge\\
+                    &\iff& \FunCmd{X_1 := \Encode{c}; c}(0) \diverge\\
+                    &\iff& \FunCmd{X_1 := \Encode{c}; c}(0) \in \bar{H_0}\\
+                    &\iff& \FunCmd{C}(\Encode{X_1 := \Encode{c}; c}) \converge\\
+                    &\iff& \FunCmd{C}(g(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{C}(\FunCmd{G}(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{G;C}(\Encode{c})) \converge\\
+    \end{array}
+  \]
+  は
+  \[
+    \begin{array}{lcl}
+      c \in \bar{H} &\iff& \FunCmd{c}(\Encode{c}) \diverge\\
+                    &\iff& \FunCmd{X_1 := \Encode{c}; c}(0) \diverge\\
+                    &\iff& \FunCmd{X_1 := \Encode{c}; c} \in \bar{H_0}\\
+                    &\iff& \FunCmd{C}(\Encode{X_1 := \Encode{c}; c}) \converge\\
+                    &\iff& \FunCmd{C}(g(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{C}(\FunCmd{G}(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{G;C}(\Encode{c})) \converge\\
+    \end{array}
+  \]
+  の誤りです．
+\item P.286, $H_{10}$の定義:
+  \[
+    H_{10} = \set{\Encode{a} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
+  \]
+  と定義してしまっていましたが，これは
+  \[
+    H_{10} = \set{a \in \Aexp \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
+  \]
+  と定義すべきでした．（原書ではこのようになっています．このように定義しないと，問題A.23の$\Aexp\backslash H_{10}$が意味をなさなくなってしまいます．）
+  この定義において，定理 A.22の「$H_{10}$が決定可能ではない」は（原書に説明がある通り）
+  \[
+    H_{10} = \set{\Encode{a} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
+  \]
+  が$\mathbf{N}$の決定可能な部分集合ではないことを意味することに注意してください．
 
 \end{itemize}
 
