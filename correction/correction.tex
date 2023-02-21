@@ -29,6 +29,17 @@
 \newcommand\ASSN{\mathbf{Assn}}
 \newcommand\REC{\mathbf{REC}}
 
+% 色の選択は https://jfly.uni-koeln.de/colorset/ を参考にした
+\newcommand\old[1]{%
+  %\underline{#1}% 下線
+  \textcolor[rgb]{1.0,0.25,0.1}{#1}% 赤
+  %\textcolor[rgb]{1.0,0.55,0.0}{#1}% オレンジ
+  }
+\newcommand\new[1]{%
+  %\underline{#1}% 下線
+  \textcolor[rgb]{0,0.55,1.0}{#1}% 空色
+  }
+
 % Environments used in the book
 \theoremstyle{definition}
 \newtheorem{theorem}{定理}[chapter]
@@ -58,8 +69,8 @@
 \section*{第1章}
 
 \begin{itemize}
-\item P.3, 1.2節，第2段落: 「$X$と$Y$が等しいことを示すの方法の一つである」とあるのは「$X$と$Y$が等しいことを示す方法の一つである」の誤りです．
-\item P.9, 1.3節，第4段落: 「$X$から$Y$の部分関数」とあるのは「$X$から$Y$への部分関数」の誤りです．
+\item P.3, 1.2節，第2段落: 「$X$と$Y$が等しいことを\old{示すの}方法の一つである」とあるのは「$X$と$Y$が等しいことを\new{示す}方法の一つである」の誤りです．
+\item P.9, 1.3節，第4段落: 「$X$から$Y$\old{の}部分関数」とあるのは「$X$から$Y$\new{への}部分関数」の誤りです．
 \end{itemize}
 
 \section*{第2章}
@@ -68,11 +79,11 @@
   \item P.22, 2.3節: $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
     \infrule
     {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
-    {\tuple{b_0 \land b_1, \sigma} \arrow \Tfalse}
+    {\tuple{b_0 \land b_1, \sigma} \arrow \old{\Tfalse}}
     とあるのは
     \infrule
     {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
-    {\tuple{b_0 \land b_1, \sigma} \arrow \Ttrue}
+    {\tuple{b_0 \land b_1, \sigma} \arrow \new{\Ttrue}}
     の誤りです．
   \item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
   \item P.24,
@@ -87,14 +98,14 @@
     態$\sigma,
     \sigma'$を取ってきても，$\tuple{w,\sigma} \to \sigma'$は成り立たな
     い」ということです．
-  \item P.25, 2.5節，第3段落: 「状態を変えずにすぐ停止しするだろう」とあるのは「状態を変えずにすぐ停止するだろう」の誤りです．
+  \item P.25, 2.5節，第3段落: 「状態を変えずにすぐ\old{停止し}するだろう」とあるのは「状態を変えずにすぐ\new{停止}するだろう」の誤りです．
   \item P.29, 2.6節, 第2段落:
     「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
-    態$\sigma'$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
-    の評価によって式$a_0'+a_1$と状態$\sigma'$が得られる．」は
+    態$\old{\sigma'}$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
+    の評価によって式$a_0'+a_1$と状態$\old{\sigma'}$が得られる．」は
     「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
-    態$\sigma$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
-    の評価によって式$a_0'+a_1$と状態$\sigma$が得られる．」の誤りです．
+    態$\new{\sigma}$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
+    の評価によって式$a_0'+a_1$と状態$\new{\sigma}$が得られる．」の誤りです．
 \end{itemize}
 
 \section*{第3章}
@@ -112,15 +123,15 @@
 }  
 
 \begin{itemize}
-\item P.35, 3.2節, 第2段落: 「すべての位置$X$について」は「すべてのプログラム変数$X$について」の誤りです．
+\item P.35, 3.2節, 第2段落: 「すべての\old{位置}$X$について」は「すべての\new{プログラム変数}$X$について」の誤りです．
 \item P.41,
-  3.3節:「$\tuple{\text{Euclid},\sigma''}\rightarrow\sigma''$とな
+  3.3節:「$\tuple{\text{Euclid},\sigma''}\rightarrow\old{\sigma''}$とな
   る$\sigma''$が存在する」は
-  「$\tuple{\text{Euclid},\sigma''}\rightarrow\sigma'$となる$\sigma'$が
+  「$\tuple{\text{Euclid},\sigma''}\rightarrow\new{\sigma'}$となる$\sigma'$が
   存在する」の誤りです．
-\item P.46, 3.4節:「性質が偽となる最小の導出が存在するという仮定」は「性質が偽となる極小の導出が存在するという仮定」の誤りです．
-  また，命題3.12の証明において，「最小の導出$d$が存在して」は「極小の導出$d$が存在して」の誤り，「$d$の最小性に矛盾する」は「$d$の極小性に矛盾する」です．
-\item P.46, 3.4節, 命題3.12の証明:「$\exists{\sigma,\sigma'\in\Sigma}.\;\Vdash\tuple{w,\sigma}\rightarrow\sigma'$」は「$\exists{\sigma,\sigma'\in\Sigma}.\; d \Vdash\tuple{w,\sigma}\rightarrow\sigma'$」の誤りです．
+\item P.46, 3.4節:「性質が偽となる\old{最小}の導出が存在するという仮定」は「性質が偽となる\new{極小}の導出が存在するという仮定」の誤りです．
+  また，命題3.12の証明において，「\old{最小}の導出$d$が存在して」は「\new{極小}の導出$d$が存在して」の誤り，「$d$の\old{最小性}に矛盾する」は「$d$の\new{極小性}に矛盾する」です．
+\item P.46, 3.4節, 命題3.12の証明:「$\exists{\sigma,\sigma'\in\Sigma}.\;\Vdash\tuple{w,\sigma}\rightarrow\sigma'$」は「$\exists{\sigma,\sigma'\in\Sigma}.\; \new{d} \Vdash\tuple{w,\sigma}\rightarrow\sigma'$」の誤りです．
 \item P.46, 3.4節, 命題3.12の証明:
   \[
     d =
@@ -132,7 +143,7 @@
       {\vdots}
       &
       \infer
-      {\tuple{c,\sigma}\rightarrow\sigma''}
+      {\tuple{\old{c},\sigma}\rightarrow\sigma''}
       {\vdots}
       &
       \infer
@@ -151,7 +162,7 @@
       {\vdots}
       &
       \infer
-      {\tuple{\Cskip,\sigma}\rightarrow\sigma}
+      {\tuple{\new{\Cskip},\sigma}\rightarrow\sigma}
       {\vdots}
       &
       \infer
@@ -160,15 +171,15 @@
     }
   \]
   の誤りです．
-\item P.46, 3.5節:「コマンド内で，代入の左辺に現れる位置の集合」は「コマンド内で，代入の左辺に現れるプログラム変数の集合」の誤りです．
-\item P.47, 3.5節:「実際，整礎な集合の任意の空でない部分集合には最小の
+\item P.46, 3.5節:「コマンド内で，代入の左辺に現れる\old{位置}の集合」は「コマンド内で，代入の左辺に現れる\new{プログラム変数}の集合」の誤りです．
+\item P.47, 3.5節:「実際，整礎な集合の任意の空でない部分集合には\old{最小}の
   要素が存在するという命題3.7の証明の中では，暗黙のうちに自然数の帰納的
-  な定義を用いて，空でない集合中に最小の要素を持つ列を構成した．」は
-  「実際，整礎な集合の任意の空でない部分集合には極小の要素が存在すると
+  な定義を用いて，空でない集合中に\old{最小}の要素を持つ列を構成した．」は
+  「実際，整礎な集合の任意の空でない部分集合には\new{極小}の要素が存在すると
   いう命題3.7の証明の中では，暗黙のうちに自然数の帰納的な定義を用いて，
-  空でない集合中に極小の要素を持つ列を構成した．」の誤りです．
-\item P.47, 問題3.13:「右辺の中に現れる位置の集合」は「右辺の中に現れる
-  プログラム変数の集合」の誤りです．
+  空でない集合中に\new{極小}の要素を持つ列を構成した．」の誤りです．
+\item P.47, 問題3.13:「右辺の中に現れる\old{位置}の集合」は「右辺の中に現れる
+  \new{プログラム変数}の集合」の誤りです．
 \end{itemize}
 
 \section*{第4章}
@@ -178,30 +189,30 @@
   \[
     \infer
     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
-    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c1:\mathbf{Com}}
+    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & \old{c1}:\mathbf{Com}}
   \]
   は
   \[
     \infer
     {\mathbf{if}\ b\ \mathbf{then}\ c_0\ \mathbf{else}\ c_1:\mathbf{Com}}
-    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & c_1:\mathbf{Com}}
+    {b:\mathbf{Bexp} & c_0:\mathbf{Com} & \new{c_1}:\mathbf{Com}}
   \]
   の誤りです．
-\item P.55, 4.3.2節: $p(\Ttrue, \sigma,\Ttrue)$は$P(\Ttrue, \sigma, \Ttrue)$の誤りです．
+\item P.55, 4.3.2節: $\old{p}(\Ttrue, \sigma,\Ttrue)$は$\new{P}(\Ttrue, \sigma, \Ttrue)$の誤りです．
 \item P.56, 上から9行目:
-  $m \not\le n \Rightarrow P(a_0 \not\le a_1,\sigma,\mathbf{false})$
+  $m \not\le n \Rightarrow P(\old{a_0 \not\le a_1},\sigma,\mathbf{false})$
   は
-  $m \not\le n \Rightarrow P(a_0 \le a_1,\sigma,\mathbf{false})$
+  $m \not\le n \Rightarrow P(\new{a_0 \le a_1},\sigma,\mathbf{false})$
   の誤りです．
 \item P.56, 上から14行目:
   \[
     \begin{array}{ll}
     \AND\\
     \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
-      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \old{{}\AND{}} P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
       \AND\\
       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t\in\mathbf{T}}.\\
-      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \old{{}\AND{}} P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
     \end{array}
   \]
   は
@@ -209,10 +220,10 @@
     \begin{array}{ll}
     \AND\\
       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
-      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \new{{}\implies{}} P(b_0\wedge b_1,\sigma, t_0\wedge t_1)\\
       \AND\\
       \forall{b_0,b_1\in\mathbf{Bexp},\sigma\in\Sigma,t_0,t_1\in\mathbf{T}}.\\
-      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \implies P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
+      \tuple{b_0,\sigma}\rightarrow t_0 \AND P(b_0,\sigma,t_0) \AND \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \new{{}\implies{}} P(b_0\vee b_1,\sigma, t_0\vee t_1) \rbrack
     \end{array}
   \]
   の誤りです．
@@ -222,18 +233,18 @@
   タンスのつもりでした．混乱を招くので避けるべきでした．
 \item P.58, 上から9行目:
   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
-  「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma',\sigma''\in\Sigma$とする．」
+  「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\new{,\sigma''}\in\Sigma$とする．」
   の誤りです．
 \item P.60, 問題4.10:
   \[
     \tuple{c_0;c_1,\sigma}\rightarrow_1^*\sigma'
-    {{\iff}_{\mathit{def}}}\
+    {\old{{\iff}_{\mathit{def}}}}\
     \exists{\sigma''}.\;\tuple{c_0,\sigma}\rightarrow_1^*\sigma''\AND
     \tuple{c_1,\sigma''}\rightarrow_1^*\sigma'
   \]
   は
   \[
-    \tuple{c_0;c_1,\sigma}\rightarrow_1^*\sigma' \iff
+    \tuple{c_0;c_1,\sigma}\rightarrow_1^*\sigma' \new{\iff}
     \exists{\sigma''}.\;\tuple{c_0,\sigma}\rightarrow_1^*\sigma''\AND
     \tuple{c_1,\sigma''}\rightarrow_1^*\sigma'
   \]
@@ -243,9 +254,9 @@
   せんでした．）
 \item P.62, 命題4.12 の証明の直後の文章において
   \begin{quote}
-    (i)と(i)から$A$が，$R$導出の存在する要素の集合$I_R$と等しいことがい
-    える．そして(i)はまさに$I_R$が$\widehat{R}$の不動点であることを表し
-    ている．さらに，(i)から$I_R$が$\widehat{R}$の\emph{最小不動
+    (i)と\old{(i)}から$A$が，$R$導出の存在する要素の集合$I_R$と等しいことがい
+    える．そして\old{(i)}はまさに$I_R$が$\widehat{R}$の不動点であることを表し
+    ている．さらに，\old{(i)}から$I_R$が$\widehat{R}$の\emph{最小不動
       点 (least fixed point)}であること，すなわち
     \[
       \widehat{R}(B) = B\Rightarrow I_R\subseteq B
@@ -254,9 +265,9 @@
   \end{quote}
   とあるのは
   \begin{quote}
-    (i) と (iii) から$A$が，$R$導出の存在する要素の集合$I_R$と等しいこ
-    とがいえる．そして (ii) はまさに$I_R$が$\widehat{R}$の不動点である
-    ことを表している．さらに，(iii) から$I_R$が$\widehat{R}$の\emph{最
+    (i) と \new{(iii)} から$A$が，$R$導出の存在する要素の集合$I_R$と等しいこ
+    とがいえる．そして \new{(ii)} はまさに$I_R$が$\widehat{R}$の不動点である
+    ことを表している．さらに，\new{(iii)} から$I_R$が$\widehat{R}$の\emph{最
       小不動点 (least fixed point)}であること，すなわち
     \[
       \widehat{R}(B) = B\Rightarrow I_R\subseteq B
@@ -272,42 +283,42 @@
 \item P.68,
   「$\mathbf{Bexp}$の表示」の部分において，「\termbooleanexpression{}の
   意味関数は，連言$\wedge_T$,
-  選言$\vee_T$，否定$\neg_T$という真偽値の集合$T$上の論理演算を用いて与
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$\old{T}$上の論理演算を用いて与
   えられる．」は「\termbooleanexpression{}の意味関数は，連
   言$\wedge_T$,
-  選言$\vee_T$，否定$\neg_T$という真偽値の集合$\mathbf{T}$上の論理演算
+  選言$\vee_T$，否定$\neg_T$という真偽値の集合$\new{\mathbf{T}}$上の論理演算
   を用いて与えられる．」の誤りです．
 \item P.69, 「$\mathbf{Com}$の表示」の部分において，
   \begin{align*}
       \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
-                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+                             & \{(\sigma,\old{\sigma'})\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
       = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
-                             & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+                             & \{(\sigma,\old{\sigma'})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
   \end{align*}
   は
   \begin{align*}
       \denotation{C}{w} = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in\denotation{C}{c;w}\}\cup {}\\
-                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
+                             & \{(\sigma,\new{\sigma})\mid  \denotation{B}{b}\sigma=\mathbf{false}\} \\
       = {} & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true} \AND (\sigma,\sigma')\in \denotation{C}{w} \circ \denotation{C}{c} \}\cup {}\\
-                             & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+                             & \{(\sigma,\new{\sigma})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
   \end{align*}
   の誤りです．また，これに続く
   \begin{align*}
     \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
                    (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
-                 & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{false} \}
+                 & \{(\sigma,\old{\sigma'})\mid \beta(\sigma)=\mathbf{false} \}
   \end{align*}
   は
   \begin{align*}
     \varphi = {} & \{(\sigma,\sigma')\mid \beta(\sigma)=\mathbf{true} \AND
                    (\sigma,\sigma')\in \varphi\circ\gamma \} \cup {} \\
-                 & \{(\sigma,\sigma)\mid \beta(\sigma)=\mathbf{false} \}
+                 & \{(\sigma,\new{\sigma})\mid \beta(\sigma)=\mathbf{false} \}
   \end{align*}
   の誤りです．
 \item P.70, 上から3行目:
   \[
     \begin{array}{l}
-      \exists{\sigma''}\ \beta(\sigma)=\mathbf{true}\AND
+      \old{\exists{\sigma''}\ }\beta(\sigma)=\mathbf{true}\AND
       (\sigma,\sigma'')\in\gamma \AND
       (\sigma'',\sigma')\in\varphi
     \end{array}
@@ -315,7 +326,7 @@
   は
   \[
     \begin{array}{l}
-      \exists{\sigma''}. \beta(\sigma)=\mathbf{true}\AND
+      \new{\exists{\sigma''}. }\beta(\sigma)=\mathbf{true}\AND
       (\sigma,\sigma'')\in\gamma \AND
       (\sigma'',\sigma')\in\varphi
     \end{array}
@@ -323,23 +334,23 @@
   の誤りです．（本書では量化子の後に必ずピリオドをつける構文を使ってい
   ます．1.1節参照．）また，それに続く
   \[
-    (\sigma,\sigma)\mid  \beta(\varphi)=\mathbf{false}
+    (\sigma,\sigma)\mid  \beta(\old{\varphi})=\mathbf{false}
   \]
   は
   \[
-    (\sigma,\sigma)\mid  \beta(\sigma)=\mathbf{false}
+    (\sigma,\sigma)\mid  \beta(\new{\sigma})=\mathbf{false}
   \]
   の誤りです．
 \item P.70, $R$の定義の右辺:
   \begin{align*}
-    R = {} &\{(\{(\sigma'',\sigma)\}/(\sigma,\sigma'))\mid
+    R = {} &\{(\{(\sigma'',\old{\sigma})\}/(\sigma,\sigma'))\mid
              \beta(\sigma)=\mathbf{true}\AND
              (\sigma,\sigma'')\in\gamma \} \cup \\
            &\{(\emptyset/(\sigma,\sigma))\mid \beta(\sigma)=\mathbf{false}\}
   \end{align*}
   は
   \begin{align*}
-    R = {} &\{(\{(\sigma'',\sigma')\}/(\sigma,\sigma'))\mid
+    R = {} &\{(\{(\sigma'',\new{\sigma'})\}/(\sigma,\sigma'))\mid
              \beta(\sigma)=\mathbf{true}\AND
              (\sigma,\sigma'')\in\gamma \} \cup \\
            &\{(\emptyset/(\sigma,\sigma))\mid \beta(\sigma)=\mathbf{false}\}
@@ -347,19 +358,19 @@
   の誤りです．
 \item P.72, 補題5.3の証明:
   \[
-    P(a)\Longleftrightarrow
+    P(a)\old{{} \Longleftrightarrow {}}
     \denotation{A}{a}=\{ (\sigma,n) \mid   \tuple{a,\sigma}\rightarrow n\}
   \]
   は
   \[
-    P(a)\Longleftrightarrow_{\mathit{def}}
+    P(a)\new{{} \Longleftrightarrow_{\mathit{def}} {}}
     \denotation{A}{a}=\{ (\sigma,n) \mid   \tuple{a,\sigma}\rightarrow n\}
   \]
   の誤りです．
 \item P.73, 構造帰納法による証明の $a \equiv X$ のケース:
   \[
     \begin{array}{l@{}l}
-      (\sigma, n)\in\denotation{A}{m}
+      (\sigma, n)\in\denotation{A}{\old{m}}
       & {} \Longleftrightarrow (\sigma\in\Sigma\AND n\equiv \sigma(X)) \\
       & {} \Longleftrightarrow \tuple{X,\sigma}\rightarrow n
     \end{array}
@@ -367,7 +378,7 @@
   は
   \[
     \begin{array}{l@{}l}
-      (\sigma, n)\in\denotation{A}{X}
+      (\sigma, n)\in\denotation{A}{\new{X}}
       & {} \Longleftrightarrow (\sigma\in\Sigma\AND n\equiv \sigma(X)) \\
       & {} \Longleftrightarrow \tuple{X,\sigma}\rightarrow n
     \end{array}
@@ -375,25 +386,25 @@
   の誤りです．
 \item P.74, 補題5.4の証明:
     \[
-      P(b)\Longleftrightarrow
+      P(b)\old{{}\Longleftrightarrow{}}
       \denotation{B}{b}=\{ (\sigma,t) \mid   \tuple{b,\sigma}\rightarrow t\}
     \]
     は
     \[
-      P(b)\Longleftrightarrow_{\mathit{def}}
+      P(b)\new{{}\Longleftrightarrow_{\mathit{def}}{}}
       \denotation{B}{b}=\{ (\sigma,t) \mid   \tuple{b,\sigma}\rightarrow t\}
     \]
     の誤りです．
   \item P.76, 補題5.6の証明:
     \[
       P(c,\sigma,\sigma')
-      \Longleftrightarrow
+      \old{{}\Longleftrightarrow{}}
       (\sigma,\sigma')\in\denotation{C}{c}
     \]
     は
     \[
       P(c,\sigma,\sigma')
-      \Longleftrightarrow_{\mathit{def}}
+      \new{{}\Longleftrightarrow_{\mathit{def}}{}}
       (\sigma,\sigma')\in\denotation{C}{c}
     \]
     の誤りです．
@@ -403,7 +414,7 @@
       \tuple{c,\sigma}\rightarrow\sigma''\AND
       P(c,\sigma,\sigma'') \AND
       \tuple{w,\sigma''}\rightarrow\sigma'\AND
-      P(w,\sigma'',\sigma)
+      P(w,\sigma'',\old{\sigma})
     \]
     は
     \[
@@ -411,7 +422,7 @@
       \tuple{c,\sigma}\rightarrow\sigma''\AND
       P(c,\sigma,\sigma'') \AND
       \tuple{w,\sigma''}\rightarrow\sigma'\AND
-      P(w,\sigma'',\sigma')
+      P(w,\sigma'',\new{\sigma'})
     \]
     の誤りです．
   \item P.77, 定理5.7の証明:
@@ -420,7 +431,7 @@
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
         (\sigma,\sigma')\in\denotation{C}{c_0}\}\cup {} \\
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\AND
-        (\sigma,\sigma')\in\denotation{C}{c_0}\}  
+        (\sigma,\sigma')\in\denotation{C}{\old{c_0}}\}  
     \end{align*}
     は
     \begin{align*}
@@ -428,7 +439,7 @@
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
         (\sigma,\sigma')\in\denotation{C}{c_0}\}\cup {} \\
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\AND
-        (\sigma,\sigma')\in\denotation{C}{c_1}\}  
+        (\sigma,\sigma')\in\denotation{C}{\new{c_1}}\}  
     \end{align*}
     の誤りです．
   \item P.78, 定理5.7の証明:
@@ -436,14 +447,14 @@
       \Gamma(\varphi) = {}
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
         (\sigma,\sigma')\in\varphi\circ\denotation{C}{c_0}\} \cup {} \\
-      & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+      & \{(\sigma,\old{\sigma'})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
     \end{align*}
     は
     \begin{align*}
       \Gamma(\varphi) = {}
       & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
         (\sigma,\sigma')\in\varphi\circ\denotation{C}{c_0}\} \cup {} \\
-      & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+      & \{(\sigma,\new{\sigma})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
     \end{align*}
     誤りです．それに続く
     \begin{align*}
@@ -451,7 +462,7 @@
       \theta_{n+1} = {}
                     & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
                       (\sigma,\sigma')\in\theta_n\circ\denotation{C}{c_0}\} \cup {}\\
-                    & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+                    & \{(\sigma,\old{\sigma'})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
     \end{align*}
     は
     \begin{align*}
@@ -459,37 +470,37 @@
       \theta_{n+1} = {}
                     & \{(\sigma,\sigma')\mid  \denotation{B}{b}\sigma=\mathbf{true}\AND
                       (\sigma,\sigma')\in\theta_n\circ\denotation{C}{c_0}\} \cup {}\\
-                    & \{(\sigma,\sigma)\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
+                    & \{(\sigma,\new{\sigma})\mid  \denotation{B}{b}\sigma=\mathbf{false}\}
     \end{align*}
     の誤りです．
   \item P.79, 定理5.7の証明:「帰納法の仮
-    定 (5.1) から$\tuple{c,\sigma''}\rightarrow\sigma$である．」は「帰
-    納法の仮定 (5.1) から$\tuple{c,\sigma''}\rightarrow\sigma'$である．」
+    定 (5.1) から$\tuple{c,\sigma''}\rightarrow\old{\sigma}$である．」は「帰
+    納法の仮定 (5.1) から$\tuple{c,\sigma''}\rightarrow\new{\sigma'}$である．」
     の誤りです．
   \item P.79, 問題5.8:
     \begin{align*}
-      & \forall{i(0\leq i\leq n)}.\;
+      & \forall{i(0\leq \old{i \leq n})}.\;
         \denotation{B}{b}\sigma_i=\mathbf{true}\AND
         \denotation{C}{c}\sigma_i=\sigma_{i+1}
     \end{align*}
     は
     \begin{align*}
-      & \forall{i(0\leq i < n)}.\;
+      & \forall{i(0\leq \new{i < n})}.\;
         \denotation{B}{b}\sigma_i=\mathbf{true}\AND
         \denotation{C}{c}\sigma_i=\sigma_{i+1}
     \end{align*}
     の誤りです．
   \item P.80,
-    問題5.9:「$\tuple{c,\sigma}\rightarrow\sigma'\Leftarrow
+    問題5.9:「$\tuple{c,\sigma}\rightarrow\sigma'\old{{}\Leftarrow{}}
     \denotation{C}{c}\sigma=\sigma'$」は
-    「$\tuple{c,\sigma}\rightarrow\sigma' \iff
+    「$\tuple{c,\sigma}\rightarrow\sigma' \new{\iff}
     \denotation{C}{c}\sigma=\sigma'$」の誤りです．
   \item P.82, 問題5.10:
-    「部分関数の集合$\Sigma\rightarrow\Sigma$」は
-    「部分関数の集合$\Sigma\PARTIAL\Sigma$」
+    「部分関数の集合$\old{\Sigma\rightarrow\Sigma}$」は
+    「部分関数の集合$\new{\Sigma\PARTIAL\Sigma}$」
     の誤りです．
-  \item P.83,下から7行目:「規則のインスタンス$R$のもとで」は「規則イン
-    スタンスの集合$R$のもとで」の誤りです．
+  \item P.83,下から7行目:「\old{規則のインスタンス}$R$のもとで」は「\new{規則イン
+    スタンスの集合}$R$のもとで」の誤りです．
   \item P.84, 定理5.11の証明:
     \begin{align*}
       f(\mathit{fix}(f))
@@ -518,12 +529,12 @@
     の${=}$の右辺と，その前の行の${=}$の右辺とが等しい理由を説明する方
     が標準的かもしれません．
   \item P.85, 下から6行目:「この考え方は以前にも，規則
-    の\terminstance{}の集合が連続な演算子を定めるのは」は「この考え方は
-    以前にも，規則の\terminstance{}の集合が連続な演算を定めるのは」の誤
+    の\terminstance{}の集合が連続な\old{演算子}を定めるのは」は「この考え方は
+    以前にも，規則の\terminstance{}の集合が連続な\new{演算}を定めるのは」の誤
     りです．（原著の operator を，本書では「演算」と訳すことにしていま
     す．）
-  \item P.86, 下から12行目: 「演算子$\widehat{R}$」は「演
-    算$\widehat{R}$」の誤りです．
+  \item P.86, 下から12行目: 「\old{演算子}$\widehat{R}$」は「\new{演
+    算}$\widehat{R}$」の誤りです．
 \end{itemize}
 
 \section*{第6章}
@@ -532,56 +543,56 @@
 \item P.92, 下から2行目:
   \begin{quote}
     コマンド$c$について，$\denotation{C}{c}\sigma$が未定義のとき
-    $\denotation{C}{c}\sigma = \bot$と書くことができて，部分関数の合成
+    $\denotation{C}{c}\sigma = \bot$と書くことが\old{できて，部分関数の合成
     に合わせて$\denotation{C}{c}\bot = \bot$と取ることにする．この
-    約束を採用すれば，$\bot$は任意の表明をみたすことになり，
+    約束を採用すれば，$\bot$は任意の表明をみたすことになり，}
     部分正当性表明を表記するのがずいぶん簡単になる．
   \end{quote}
   は
   \begin{quote}
     コマンド$c$について，$\denotation{C}{c}\sigma$が未定義のと
-    き$\denotation{C}{c}\sigma = \bot$と書くことができる．部分関数の合
+    き$\denotation{C}{c}\sigma = \bot$と書くことが\new{できる．部分関数の合
     成の都合上，$\denotation{C}{c}\bot =
-    \bot$としよう．$\bot$が任意の表明をみたすという約束を採用するならば，
+    \bot$としよう．$\bot$が任意の表明をみたすという約束を採用するならば，}
     部分正当性表明を表記するのがずいぶん簡単になる．
   \end{quote}
   の誤りです．
 \item P.95, $\mathrm{FV}$の定義:
   \begin{align*}
-    & \FV{n} =_{\mathit{def}} \FV{X} =_{\mathit{def}} \emptyset \\
+    & \FV{n} \old{{}=_{\mathit{def}{}}} \FV{X} =_{\mathit{def}} \emptyset \\
     & \FV{i} =_{\mathit{def}} \{i\} \\
-    & \FV{a_0 + a_1} =_{\mathit{def}} \FV{a_0 - a_1} =_{\mathit{def}} \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
+    & \FV{a_0 + a_1} \old{{}=_{\mathit{def}}{}} \FV{a_0 - a_1} \old{{}=_{\mathit{def}}{}} \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
   \end{align*}
   は
   \begin{align*}
-    & \FV{n} = \FV{X} =_{\mathit{def}} \emptyset \\
+    & \FV{n} \new{{}={}} \FV{X} =_{\mathit{def}} \emptyset \\
     & \FV{i} =_{\mathit{def}} \{i\} \\
-    & \FV{a_0 + a_1} = \FV{a_0 - a_1} = \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
+    & \FV{a_0 + a_1} \new{{}={}} \FV{a_0 - a_1} \new{{}={}} \FV{a_0 \times a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1}\\
   \end{align*}
   の誤りです．また，
   \begin{align*}
-    & \FV{\Ttrue} =_{\mathit{def}} \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
-    & \FV{a_0 = a_1} =_{\mathit{def}} \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
-    & \FV{A_0 \wedge A_1} =_{\mathit{def}} \FV{A_0 \vee A_1} =_{\mathit{def}} \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
+    & \FV{\Ttrue} \old{{}=_{\mathit{def}}{}} \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
+    & \FV{a_0 = a_1} \old{{}=_{\mathit{def}}{}} \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
+    & \FV{A_0 \wedge A_1} \old{{}=_{\mathit{def}}{}} \FV{A_0 \vee A_1} \old{{}=_{\mathit{def}}{}} \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
     & \FV{\neg{A}} =_{\mathit{def}} \FV{A} \\
-    & \FV{\forall{i}.A} =_{\mathit{def}} \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
+    & \FV{\forall{i}.A} \old{{}=_{\mathit{def}}{}} \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
   \end{align*}
   は
   \begin{align*}
-    & \FV{\Ttrue} = \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
-    & \FV{a_0 = a_1} = \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
-    & \FV{A_0 \wedge A_1} = \FV{A_0 \vee A_1} = \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
+    & \FV{\Ttrue} \new{{}={}} \FV{\Tfalse} =_{\mathit{def}} \emptyset \\
+    & \FV{a_0 = a_1} \new{{}={}} \FV{a_0 \leq a_1} =_{\mathit{def}} \FV{a_0} \cup \FV{a_1} \\
+    & \FV{A_0 \wedge A_1} \new{{}={}} \FV{A_0 \vee A_1} \new{{}={}} \FV{A_0 \Rightarrow A_1} =_{\mathit{def}} \FV{A_0} \cup \FV{A_1} \\
     & \FV{\neg{A}} =_{\mathit{def}} \FV{A} \\
-    & \FV{\forall{i}.A} = \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
+    & \FV{\forall{i}.A} \new{{}={}} \FV{\exists{i}.A} =_{\mathit{def}} \FV{A} \backslash \{i\}
   \end{align*}
   の誤りです．
 \item P.95, 6.2.2節:
   \[
-    A[a/i] \equiv - - - i - - - i - --
+    A[a/i] \equiv \old{- - - i - - - i - --}
   \]
   は
   \[
-    A[a/i] \equiv - - - a - - - a - --
+    A[a/i] \equiv \new{- - - a - - - a - --}
   \]
   の誤りです．
 \item P.96, 6.2.2節, $\mathbf{Assn}$の元での代入の定義:
@@ -591,37 +602,37 @@
   \end{align*}
   となっていますが，束縛変数が$i$であるケースを訳し忘れていました．
   \begin{align*}
-    (\forall{j}.A)[a/i] \equiv_{\mathit{def}} \forall{j}.(A[a/i]) \quad & (\forall{i}.A)[a/i] \equiv_{\mathit{def}} \forall{i}.A\\
-    (\exists{j}.A)[a/i] \equiv_{\mathit{def}} \exists{j}.(A[a/i]) \quad & (\exists{i}.A)[a/i] \equiv_{\mathit{def}} \exists{i}.A
+    (\forall{j}.A)[a/i] \equiv_{\mathit{def}} \forall{j}.(A[a/i]) \quad & \new{(\forall{i}.A)[a/i] \equiv_{\mathit{def}} \forall{i}.A}\\
+    (\exists{j}.A)[a/i] \equiv_{\mathit{def}} \exists{j}.(A[a/i]) \quad & \new{(\exists{i}.A)[a/i] \equiv_{\mathit{def}} \exists{i}.A}
   \end{align*}
   の誤りです．
 \item P.98,
   「表明$\mathbf{Assn}$の意味」の部分:「解釈関数の役割は，整数変数の解
-  釈として$N$内の値を与えることである．」は「解釈関数の役割は，整数変数
-  の解釈として$\mathbf{N}$内の値を与えることである．」の誤りです．
+  釈として$\old{N}$内の値を与えることである．」は「解釈関数の役割は，整数変数
+  の解釈として$\new{\mathbf{N}}$内の値を与えることである．」の誤りです．
 \item P.104, 補題6.9:
   \[
-    \sigma \models^I B[a/X] \iff \sigma[\DAexpv\sem{a}\sigma/X] \models^I B
+    \sigma \models^I B[a/X] \iff \sigma[\old{\DAexpv}\sem{a}\sigma/X] \models^I B
   \]
   は
   \[
-    \sigma \models^I B[a/X] \iff \sigma[\DAexp\sem{a}\sigma/X] \models^I B
+    \sigma \models^I B[a/X] \iff \sigma[\new{\DAexp}\sem{a}\sigma/X] \models^I B
   \]
   の誤りです．
 \item P.105,
   補題6.9の証明の「代入の規則」の部分:「$\sigma \models^I B[a/X] \iff
-  \sigma[\DAexpv\sem{a}\sigma/X] \models^I
-  B$」は「$\sigma \models^I B[a/X] \iff \sigma[\DAexp\sem{a}\sigma/X]
+  \sigma[\old{\DAexpv}\sem{a}\sigma/X] \models^I
+  B$」は「$\sigma \models^I B[a/X] \iff \sigma[\new{\DAexp}\sem{a}\sigma/X]
   \models^I B$」の誤りです．
 \item P.106, 定理6.11の証明, 「while
-  ループの規則」の部分:「$\models \preCond{A \land b} \land
-  \postCond{A}$」は「$\models \preCond{A \land b} c \postCond{A}$」の誤
+  ループの規則」の部分:「$\models \preCond{A \land b} \old{\land}
+  \postCond{A}$」は「$\models \preCond{A \land b} \new{c} \postCond{A}$」の誤
   りです．
 \item P.108, 下から14行目:
   \begin{quote}
     したがって，帰結の規則を用いれば
     \[
-      \preCond{(X = n) \land (Y=1)} w \postCond{Y = n!}
+      \preCond{(X = n) \old{{}\land{}} (Y=1)} w \postCond{Y = n!}
     \]
     が成り立つことが分かる．
   \end{quote}
@@ -629,7 +640,7 @@
   \begin{quote}
     したがって，帰結の規則を用いれば
     \[
-      \preCond{(X = n) \land n \ge 0 \land (Y=1)} w \postCond{Y = n!}
+      \preCond{(X = n) \new{{}\land n \ge 0 \land{}} (Y=1)} w \postCond{Y = n!}
     \]
     が成り立つことが分かる．
   \end{quote}
@@ -642,12 +653,12 @@
 \item P.114, 脚注:
   \begin{quote}
     完全性定理は，述語論理の証明システムによって証明可能な表明は任意の
-    解釈のもとで妥当であることを主張している．
+    解釈のもとで\old{妥当である}ことを主張している．
   \end{quote}
   は
   \begin{quote}
-    完全性定理は，述語論理の証明システムは，任意の解釈のもとで妥当であ
-    るような表明をすべて証明できることを主張している．
+    完全性定理は，述語論理の証明システムは，任意の解釈のもとで\new{妥当であ
+    るような表明をすべて証明できる}ことを主張している．
   \end{quote}
   の誤りです．（原著の脚注は「完全性定理は，述語論理の証明システムによっ
   て証明可能な表明は，任意の解釈のもとで妥当であるような表明と一致する」
@@ -659,37 +670,37 @@
   は述語論理の証明システムの健全性の説明となりますので，これは誤りで
   す．）
 \item P.116: $\mathbf{Assn}$が ``expressive'' であることを，本書で
-  は$\mathbf{Assn}$が「表現可能」と訳しましたが，この訳語の選択はあまり
+  は$\mathbf{Assn}$が「\old{表現可能}」と訳しましたが，この訳語の選択はあまり
   適当ではないかもしれませ
   ん．$\mathbf{Assn}$が ``expressive'' とはP.116の定義にあるよう
   に，$\mathbf{Assn}$
   が任意のコマンド$c$と任意の事後条件$B$について，任意の解釈について最
   弱自由事前条件をとなるような表明が$\mathbf{Assn}$で書けることを指しま
   す．すなわち，最弱自由事前条件を表現できるというの
-  が ``expressiveness'' の趣旨なので，「表現力豊か」とでも訳すべきかも
+  が ``expressiveness'' の趣旨なので，「\new{表現力豊か}」とでも訳すべきかも
   しれません．
 \item P.118, 定理7.5の証明:
   \[
-    \sigma \models^I  w\lrbra{c,B}^I
+    \sigma \models^I  \old{w\lrbra{c,B}^I}
     \Leftrightarrow
     \DCom\lrbra{c}\sigma \models^I B
   \]
   は
   \[
-    \sigma \models^I  w\lrbra{c,B}
+    \sigma \models^I  \new{w\lrbra{c,B}}
     \Leftrightarrow
     \DCom\lrbra{c}\sigma \models^I B
   \]
   の誤りです．
 \item P.120, 上から3行目:
   \begin{align*}
-    & \sigma \models^I A \text{ およびそのときに限り }
+    & \sigma \models^I A \old{\text{ およびそのときに限り }}
       \models^I A[\bar{s}/\bar{X}]
       \tag{$\ast$}
   \end{align*}
   とあるのは，記法の統一上は
   \begin{align*}
-    & \sigma \models^I A \iff
+    & \sigma \models^I A \new{\iff}
       \models^I A[\bar{s}/\bar{X}]
       \tag{$\ast$}
   \end{align*}
@@ -712,90 +723,90 @@
   \begin{align*}
     \DCom\lrbra{c_0}\sigma_{i} = \sigma_{i+1} 
     & ~\Leftrightarrow~
-      \sigma_i \models^I (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \new{\sigma_i \models^I} (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
       \wedge \neg w\lrbra{c_0,\Tfalse})
     \\
     & ~\Leftrightarrow~
-      \models^I (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
+      \new{\models^I} (w\lrbra{c_0, \bar{X}=\bar{s}_{i+1}} 
       \wedge \neg w\lrbra{c_0,\Tfalse})[\bar{s}_i/\bar{X}]
     &&  (\ast)より.
   \end{align*}
   の誤りです．
 \item P.122,
   下から12行目:「$\preCond{w\lrbra{c,B}} c \postCond{B}$が成り立つ．」
-  は「$\vdash \preCond{w\lrbra{c,B}} c \postCond{B}$が成り立つ．」の誤
+  は「$\new{\vdash} \preCond{w\lrbra{c,B}} c \postCond{B}$が成り立つ．」の誤
   りです．
 \item P.123,
   上から10行目:「$[ (b \wedge w\lrbra{c_0,B}) \lor (\neg b \wedge
-  w\lrbra{c_1,B})]$」は「$\sigma \models^I [ (b \wedge w\lrbra{c_0,B})
+  w\lrbra{c_1,B})]$」は「$\new{\sigma \models^I} [ (b \wedge w\lrbra{c_0,B})
   \lor (\neg b \wedge w\lrbra{c_1,B})]$」の誤りです．また，その後の「条
-  件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}c_0 \postCond{B}$が得
-  られる．」は「条件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}c
+  件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}\old{c_0} \postCond{B}$が得
+  られる．」は「条件分岐の規則により$\vdash \preCond{w\lrbra{c,B}}\new{c}
   \postCond{B}$が得られる．」の誤りです．
 \item P.126, 一番下の行:「\emph{原始帰納的関数}」に原語が抜けていました．
-  「\emph{原始帰納的関数 (primitive recursive function)}」の誤りです．
+  「\emph{原始帰納的関数\new{ (primitive recursive function)}}」の誤りです．
 \item P.128, 下から4行目:
   \begin{align*}
     \mathit{vc}(\preCond{A}c_0; \preCond{D} c_1\postCond{B}) & =
-                                                               \mathit{vc}(\preCond{A}c \postCond{D}) \cup \mathit{vc}(\preCond{D}c\postCond{B})
+                                                               \mathit{vc}(\preCond{A}\old{c} \postCond{D}) \cup \mathit{vc}(\preCond{D}\old{c}\postCond{B})
   \end{align*}
   は
   \begin{align*}
     \mathit{vc}(\preCond{A}c_0; \preCond{D} c_1\postCond{B}) & =
-                                                               \mathit{vc}(\preCond{A}c_0 \postCond{D}) \cup \mathit{vc}(\preCond{D}c_1 \postCond{B})
+                                                               \mathit{vc}(\preCond{A}\new{c_0} \postCond{D}) \cup \mathit{vc}(\preCond{D}\new{c_1} \postCond{B})
   \end{align*}
   の誤りです．
 \item P.132,
   \begin{align*}
-    \text{ ただし，}&\text{$\overline{b} = \set{\sigma \mid \sigma = \bot \mbox{または} \DBexp}$}\\
+    \text{ ただし，}&\text{$\overline{b} \old{{}={}} \set{\sigma \mid \sigma = \bot \mbox{または} \old{\DBexp}}$}\\
   \end{align*}
   は
   \begin{align*}
-    \text{ ただし，}&\text{$\overline{b} =_{\mathit{def}} \set{\sigma \mid \sigma = \bot \mbox{または} \DBexp\sem{b}\sigma = \mathbf{true}}$}\\
+    \text{ ただし，}&\text{$\overline{b} \new{{}=_{\mathit{def}}{}} \set{\sigma \mid \sigma = \bot \mbox{または} \new{\DBexp\sem{b}\sigma = \mathbf{true}}}$}\\
   \end{align*}
   また，
   「ただし$G \COL \PT \rightarrow \PT$は$G(p)(Q) =
-  (\overline{b} \cap \Pt\sem{c_0}(p(Q))) \cup (\overline{\neg b} \cap
+  (\overline{b} \cap \Pt\sem{\old{c_0}}(p(Q))) \cup (\overline{\neg b} \cap
   Q)$で与えられる．」は
   「ただし$G \COL \PT \rightarrow \PT$は$G(p)(Q) =
-  (\overline{b} \cap \Pt\sem{c}(p(Q))) \cup (\overline{\neg b} \cap
+  (\overline{b} \cap \Pt\sem{\new{c}}(p(Q))) \cup (\overline{\neg b} \cap
   Q)$で与えられる．」の誤りです．
 \end{itemize}
 
 \section*{第8章}
 
 \begin{itemize}
-\item P.135, 下から3行目:「意味を与えるこのとできる」は「意味を与えるこ
-  とのできる」の誤りです．
+\item P.135, 下から3行目:「意味を与える\old{このと}できる」は「意味を与える\new{こ
+  との}できる」の誤りです．
 \item P.139,
-  下から11行目:「無限列$s$の任意の有限な部分列は」は「無限
-  列$0^\omega$の任意の有限な部分列は」の誤りです．
+  下から11行目:「無限列$\old{s}$の任意の有限な部分列は」は「無限
+  列$\new{0^\omega}$の任意の有限な部分列は」の誤りです．
 \item P.142, 関数$\tuple{f_1,\dots,f_k}$の定義:
   \[
-    \tuple{f_1,\dots,f_k}(e) =_{\mathit{def}} (f_1(e),\dots,f_n(e))
+    \tuple{f_1,\dots,f_k}(e) =_{\mathit{def}} (f_1(e),\dots,\old{f_n(e)})
   \]
   は
   \[
-    \tuple{f_1,\dots,f_k}(e) =_{\mathit{def}} (f_1(e),\dots,f_k(e))
+    \tuple{f_1,\dots,f_k}(e) =_{\mathit{def}} (f_1(e),\dots,\new{f_k(e)})
   \]
   の誤りです．
 \item P.143, 上から2行目:
   「また，\cpo{}の直積を取る操作を関数に拡張することもできる．$f_1
-  \COL d_1 \rightarrow D_1,\dots,f_k \COL D_k \rightarrow E_k$につい
+  \COL \old{d_1} \rightarrow D_1,\dots,f_k \COL D_k \rightarrow E_k$につい
   て，」は「また，\cpo{}の直積を取る操作を関数に拡張することもでき
-  る．$f_1 \COL D_1 \rightarrow E_1, \dots,f_k \COL D_k \rightarrow
+  る．$f_1 \COL \new{D_1} \rightarrow E_1, \dots,f_k \COL D_k \rightarrow
   E_k$について，」の誤りです．
 \item P.145, 補題8.10:
-  「$f \COL D_1 \times \dots \times D_K \rightarrow E$を関数とする」
+  「$f \COL D_1 \times \dots \times \old{D_K} \rightarrow E$を関数とする」
   は
-  「$f \COL D_1 \times \dots \times D_k \rightarrow E$を関数とする」
+  「$f \COL D_1 \times \dots \times \new{D_k} \rightarrow E$を関数とする」
   の誤りです．
 \item P.146:
   \begin{quote}
     関数の \omegachain $f_0 \sqle f_1 \sqle \dots \sqle f_n \sqle \dots$の
     最小上界$\bigsqcup_{n \in \NAT} f_n$は，
     \[
-      (\bigsqcup_{n \in \NAT} f_n)(d) = \bigsqcup_n(f_n(d))
+      (\bigsqcup_{n \in \NAT} f_n)(d) \old{{}={}} \bigsqcup_{\old{n}}(f_n(d))
     \]
     のように$d \in D$が与えられると各点で最小上界を取った元として定義され
     る．
@@ -805,38 +816,39 @@
     関数の \omegachain $f_0 \sqle f_1 \sqle \dots \sqle f_n \sqle \dots$の
     最小上界$\bigsqcup_{n \in \NAT} f_n$は，
     \[
-      (\bigsqcup_{n \in \NAT} f_n)(d) =_{\mathit{def}} \bigsqcup_{n \in \NAT}(f_n(d))
+      (\bigsqcup_{n \in \NAT} f_n)(d) \new{{}=_{\mathit{def}}{}} \bigsqcup_{\new{n \in \NAT}}(f_n(d))
     \]
     のように$d \in D$が与えられると各点で最小上界を取った元として定義され
     る．
   \end{quote}
   の誤りです．
 \item P.149, 上から3行目:
-  「以下の性質を満たす要素$\bot$と$\liftin{-}$の存在を仮定する」
+  「以下の性質を満たす要素$\bot$\old{と}$\liftin{-}$の存在を仮定する」
   は
-  「以下の性質を満たす要素$\bot$と関数$\liftin{-}$の存在を仮定する」
+  「以下の性質を満たす要素$\bot$\new{と関数}$\liftin{-}$の存在を仮定する」
   の誤りです．
 \item P.150, 上から1行目:
   \[
-    \METALET\ f \Leftarrow d'. e
+    \METALET\ \old{f} \Leftarrow d'. e
   \]
   は
   \[
-    \METALET\ x \Leftarrow d'. e
+    \METALET\ \new{x} \Leftarrow d'. e
   \]
+  の誤りです．
 \item P.151, 上から10行目:
   \[
-    \set{\INJ_1(d_1) \mid d_1 \in D_1} \cup \dots \cup \set{\INJ_k(d_k) \mid d_k \in D_1}
+    \set{\INJ_1(d_1) \mid d_1 \in D_1} \cup \dots \cup \set{\INJ_k(d_k) \mid d_k \in \old{D_1}}
   \]
   は
   \[
-    \set{\INJ_1(d_1) \mid d_1 \in D_1} \cup \dots \cup \set{\INJ_k(d_k) \mid d_k \in D_k}
+    \set{\INJ_1(d_1) \mid d_1 \in D_1} \cup \dots \cup \set{\INJ_k(d_k) \mid d_k \in \new{D_k}}
   \]
   の誤りです．
 \item P.152, 上から3行目:
-  「$D_1 + \dots D_k \rightarrow E$」
+  「$\old{D_1 + \dots D_k} \rightarrow E$」
   は
-  「$D_1 + \dots + D_k \rightarrow E$」
+  「$\new{D_1 + \dots + D_k} \rightarrow E$」
   の誤りです．
 \end{itemize}
 
@@ -844,32 +856,32 @@
 
 \begin{itemize}
 \item P.159, 9.1節:
-  「整数$n$」は「整数$n \in \mathbf{N}$」の誤りです．なお，本書で
+  「整数$\old{n}$」は「整数$\new{n \in \mathbf{N}}$」の誤りです．なお，本書で
   は$\mathbf{N}$は負の数を含む整数に対応する定数を表す$\mathbf{Aexp}$の
   要素であることに注意してください．（P.15参照）
 \item P.164, 1行目:
   \[
-    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(Z_0) \rightarrow z_1 \mid z_2)
+    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(\old{Z_0}) \rightarrow z_1 \mid z_2)
   \]
   は
   \[
-    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(z_0) \rightarrow z_1 \mid z_2)
+    \COND(z_0,z_1,z_2) = (\strict{\ISZERO}(\new{z_0}) \rightarrow z_1 \mid z_2)
   \]
   の誤りです．
 \item P.164, 下から3--5行目:
   \[
     \begin{array}{rcl}
-      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(n_1,m\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
+      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(\old{n_1,m}\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
       \vdots\\
-      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(n_1,m\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
+      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(\old{n_1,m}\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
     \end{array}
   \]
   は
   \[
     \begin{array}{rcl}
-      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(n_1,\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
+      \mbox{任意の$n_1,\dots,n_{a_1} \in \NUM$について} \delta_1(\new{n_1,}\dots,n_{a_1}) &=& \semva{d_1}\delta\rho[n_1/x_1,\dots,n_{a_1}/x_{a_1}]\\
       \vdots\\
-      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(n_1,\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
+      \mbox{任意の$n_1,\dots,n_{a_k} \in \NUM$について} \delta_k(\new{n_1,}\dots,n_{a_k}) &=& \semva{d_k}\delta\rho[n_1/x_1,\dots,n_{a_k}/x_{a_k}]
     \end{array}
   \]
   の誤りです．
@@ -877,59 +889,59 @@
   \begin{align*}
     \delta  ~=~ & \mu \varphi. (\lambda m. \semva{t}\varphi\rho[m/x])\\
     ~=~ & \FIX(\lambda \varphi. (\lambda m. \semva{t}\varphi\rho[m/x]))\\
-    ~=~ & \bigsqcup_{r \in \NUM} \delta^{(r)}.
+    ~=~ & \bigsqcup_{\old{r \in \NUM}} \delta^{(r)}.
   \end{align*}
   は
   \begin{align*}
     \delta  ~=~ & \mu \varphi. (\lambda m. \semva{t}\varphi\rho[m/x])\\
     ~=~ & \FIX(\lambda \varphi. (\lambda m. \semva{t}\varphi\rho[m/x]))\\
-    ~=~ & \bigsqcup_{r \in \omega} \delta^{(r)}.
+    ~=~ & \bigsqcup_{\new{r \in \omega}} \delta^{(r)}.
   \end{align*}
   の誤りです．
 \item P.167,
   \begin{quote}
     一般に，以下の等式
     \[
-      \delta^{(r)}(m) = F(\delta^{(r-1)}(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
+      \delta^{(r)}(m) = \old{F(\delta^{(r-1)}}(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
     \]
   \end{quote}
   は
   \begin{quote}
     一般に，以下の等式
     \[
-      \delta^{(r)}(m) = F(\delta^{(r-1)})(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
+      \delta^{(r)}(m) = \new{F(\delta^{(r-1)})}(m) = \SEMCOND(\ISZERO(m),\valuize{1},\valuize{m} \strict{\times} \delta^{(r-1)}(m-1))\\
     \]
   \end{quote}
   の誤りです．
 \item P.177, 一番上の行:
   \[
-    \delta = \bigsqcup_{r \in \NUM} F^r(\bot)
+    \delta = \bigsqcup_{\old{r \in \NUM}} F^r(\bot)
   \]
   は
   \[
-    \delta = \bigsqcup_{r \in \omega} F^r(\bot)
+    \delta = \bigsqcup_{\new{r \in \omega}} F^r(\bot)
   \]
   の誤りです．
 \item P.177, 8行目:
   \begin{quote}
-    任意の$i \in [1,k]$
+    任意の$\old{i \in [1,k]}$
   \end{quote}
   とあるのは
   \begin{quote}
-    任意の$i \in \set{1,\dots,k}$
+    任意の$\new{i \in \set{1,\dots,k}}$
   \end{quote}
   の意味です．（P.140ではこの表記を用いていました．）なお，原書に忠実に訳すのであれば，「任意の$1 \le i \le k$」と書くべきところですが，これは任意にとられる変数が$i$であることが少しわかりにくいかもしれないと考え，上記のように翻訳してあります．
 \item P.177, 下から6行目:
-  「$r \in \NUM$に関する数学的帰納法」とあるのは「$r \in \omega$に関する数学的帰納法」の誤りです．
+  「$r \in \old{\NUM}$に関する数学的帰納法」とあるのは「$r \in \new{\omega}$に関する数学的帰納法」の誤りです．
 \item P.179:
-  上から11行目の「$r \in \NUM$」は「$r \in \omega$」の誤りです．また，下から12行目の「$r \in \NUM$」は「$r \in \omega$」の誤りです．
+  上から11行目の「$r \in \old{\NUM}$」は「$r \in \new{\omega}$」の誤りです．また，下から12行目の「$r \in \old{\NUM}$」は「$r \in \new{\omega}$」の誤りです．
 \item P.180:
   \[
-    S \equiv \BFLET \BFREC A = t \BFAND B = u \BFIN v
+    S \equiv \BFLET \BFREC A \old{{}={}} t \BFAND B \old{{}={}} u \BFIN v
   \]
   は
   \[
-    S \equiv \BFLET \BFREC A \Leftarrow t \BFAND B \Leftarrow u \BFIN v
+    S \equiv \BFLET \BFREC A \new{{}\Leftarrow{}} t \BFAND B \new{{}\Leftarrow{}} u \BFIN v
   \]
   の誤りです．（原書ではこちらの記法を用いています．また，本書でも10.1節ではこの記法を用いています．）
 \end{itemize}
@@ -939,126 +951,135 @@
 \begin{itemize}
 \item P.190:
   \begin{quote}
-    $d\in D$に対して，各述語$P(x_1,\ldots,x_{i-1},d,x_{i+1},\ldots,x_k)$ は，引数を一つ
+    $d\in \old{D}$に対して，各述語$P(x_1,\ldots,x_{i-1},d,x_{i+1},\ldots,x_k)$ は，引数を一つ
     固定して得られるものであるから\inclusive{}である．
   \end{quote}
   は
   \begin{quote}
-    $d\in D_i$に対して，各述語$P(x_1,\ldots,x_{i-1},d,x_{i+1},\ldots,x_k)$ は，引数を一つ
+    $d\in \new{D_i}$に対して，各述語$P(x_1,\ldots,x_{i-1},d,x_{i+1},\ldots,x_k)$ は，引数を一つ
     固定して得られるものであるから\inclusive{}である．
   \end{quote}
-\item P.193: 上から11行目と上から14行目の$b\in T_\bot$は$b\in \mathbf{T}_\bot$の誤りです．
-\item P.196, 「逆像」の段落: 「$F:A\to B$ を関数」は「$f:A\to B$ を関数」の誤りです．
-\item P.197, 問題10.18:「次を満たす $[N\to N_\bot]$ の最小の関数」は「次を満たす $[\mathbf{N}\to \mathbf{N}_\bot]$ の最小の関数」の誤りです．
+  の誤りです．
+\item P.193: 上から11行目と上から14行目の$b\in \old{T_\bot}$は$b\in \new{\mathbf{T}_\bot}$の誤りです．
+\item P.196, 「逆像」の段落: 「$\old{F}:A\to B$ を関数」は「$\new{f}:A\to B$ を関数」の誤りです．
+\item P.197, 問題10.18:「次を満たす $[\old{N\to N_\bot}]$ の最小の関数」は「次を満たす $[\new{\mathbf{N}\to \mathbf{N}_\bot}]$ の最小の関数」の誤りです．
 \item P.200, $\mathit{List}$の定義:
   \[
-    {\it List} =_{\mathit{def}} {\it in}_1\{()\} \cup {\it in}_2(N\times{\it List}) =
-    \{()\} + (N\times{\it List})
+    {\it List} =_{\mathit{def}} {\it in}_1\{()\} \cup {\it in}_2(\old{N}\times{\it List}) =
+    \{()\} + (\old{N}\times{\it List})
   \]
   は
   \[
-    {\it List} =_{\mathit{def}} {\it in}_1\{()\} \cup {\it in}_2(\mathbf{N}\times{\it List}) =
-    \{()\} + (\mathbf{N}\times{\it List})
+    {\it List} =_{\mathit{def}} {\it in}_1\{()\} \cup {\it in}_2(\new{\mathbf{N}}\times{\it List}) =
+    \{()\} + (\new{\mathbf{N}}\times{\it List})
   \]
   の誤りです．
 \item P.201, 問題10.20:
-  「整数上の関数 $s:N\times N\to N$と$r:N\times N\to{\it List}$を仮定する」
+  「整数上の関数 $s:\old{N\times N\to N}$と$r:\old{N\times N}\to{\it List}$を仮定する」
   は
-  「整数上の関数 $s:\mathbf{N}\times \mathbf{N}\to \mathbf{N}$と$r:\mathbf{N}\times \mathbf{N}\to{\it List}$を仮定する」
+  「整数上の関数 $s:\new{\mathbf{N}\times \mathbf{N}\to \mathbf{N}}$と$r:\new{\mathbf{N}\times \mathbf{N}}\to{\it List}$を仮定する」
   の誤りです．また，
-  「$f$を$[{\it List}\times N\to N_\bot]$中の関数で」
+  「$f$を$[{\it List}\times \old{N\to N_\bot}]$中の関数で」
   は
-  「$f$を$[{\it List}\times \mathbf{N}\to \mathbf{N}_\bot]$中の関数で」
+  「$f$を$[{\it List}\times \new{\mathbf{N}\to \mathbf{N}_\bot}]$中の関数で」
   の誤りです．また，
-  「$g$を$[{\it List}\times N\to N_\bot]$中の関数で」
+  「$g$を$[{\it List}\times \old{N\to N_\bot}]$中の関数で」
   は
-  「$g$を$[{\it List}\times \mathbf{N}\to \mathbf{N}_\bot]$中の関数で」
+  「$g$を$[{\it List}\times \new{\mathbf{N}\to \mathbf{N}_\bot}]$中の関数で」
   の誤りです．
 \end{itemize}
 
 \section*{第11章}
 
 \begin{itemize}
-\item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)} \COL t$」の誤りです．
+\item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)}\new{ \COL t}$」の誤りです．
 \item P.206, $\mathit{FV}$の定義:
-  「$\mathit{FV}(\fst(t)) =_{\mathit{def}} \mathit{FV}(\snd(t)) = \mathit{FV}(t)$」は「$\mathit{FV}(\fst(t)) = \mathit{FV}(\snd(t)) =_{\mathit{def}} \mathit{FV}(t)$」の誤りです．
+  \[
+    \mathit{FV}(\fst(t)) \old{{}=_{\mathit{def}}{}} \mathit{FV}(\snd(t)) \old{{}={}} \mathit{FV}(t)
+  \]
+  は
+  \[
+    \mathit{FV}(\fst(t)) \new{{}={}} \mathit{FV}(\snd(t)) \new{{}=_{\mathit{def}}{}} \mathit{FV}(t)
+  \]
+  の誤りです．
 \item P.209, 表示的意味論の定義:
-  「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, v_1\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」は「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, v_2\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」の誤りです．
+  「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, \old{v_1}\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」は
+  「$\eden{(t_1,t_2)} = \lambda\rho.{\it let}\ v_1\Leftarrow\eden{t_1}\rho, \new{v_2}\Leftarrow\eden{t_2}\rho.\floor{(v_1,v_2)}$」の誤りです．
 \item P.212, 補題11.11の証明:
-  「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\Rightarrow\eden{c_2}\rho.\floor{(v_1,v_2)}$」は「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\Leftarrow\eden{c_2}\rho.\floor{(v_1,v_2)}$」の誤りです．また，「次の規則のとき:」に続く
+  「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\old{{}\Rightarrow{}}\eden{c_2}\rho.\floor{(v_1,v_2)}$」は
+  「$\mathit{let}\ v_1\Leftarrow\eden{c_1}\rho,v_2\new{{}\Leftarrow{}}\eden{c_2}\rho.\floor{(v_1,v_2)}$」の誤りです．また，「次の規則のとき:」に続く
    \[
-     \infer{(t_1\ t_2)\to^e c_1}{
+     \infer{(t_1\ t_2)\to^e \old{c_1}}{
        t_1\to^e\lambda x.t'_1
        & t_2\to^e c_2
        & t'_1[c_2/x] \to^e c}
    \]
    は
    \[
-     \infer{(t_1\ t_2)\to^e c}{
+     \infer{(t_1\ t_2)\to^e \new{c}}{
        t_1\to^e\lambda x.t'_1
        & t_2\to^e c_2
        & t'_1[c_2/x] \to^e c}
    \]
    の誤りです．
  \item P.216--219:
-   「$[s_1/x_1,\ldots,s_k/x_k]$」とすべきところを「$[s_1/x_1,\ldots,x_k/x_k]$」としている箇所が9箇所あります．（P.216の1行目，2行目，4行目，5行目，7行目，9行目，下から5行目，P.217の6行目, P.219の3行目）
- \item P.237, 問題11.28 (1): 「$\Omega=\rec{w.w}$のとき」は「$\Omega \equiv \rec{w.w}$のとき」とするほうが適当です．
+   「$[s_1/x_1,\ldots,\old{s_k}/x_k]$」とすべきところを「$[s_1/x_1,\ldots,\new{x_k}/x_k]$」としている箇所が9箇所あります．（P.216の1行目，2行目，4行目，5行目，7行目，9行目，下から5行目，P.217の6行目, P.219の3行目）
+ \item P.237, 問題11.28 (1): 「$\Omega\old{{}={}}\rec{w.w}$のとき」は「$\Omega \new{{}\equiv{}} \rec{w.w}$のとき」とするほうが適当です．
  \item P.237, 問題11.28
    (3):「$d\lesim_\typint t \quad \Longleftrightarrow\quad \forall
    n\in\Natu.d=\floor{n} \ \Rightarrow\ \to^l
    n$」は「$d\lesim_\typint t \quad \Longleftrightarrow\quad \forall
-   n\in\Natu.d=\floor{n} \ \Rightarrow\ t \to^l n$」の誤りです．また，
+   n\in\Natu.d=\floor{n} \ \Rightarrow\ \new{t} \to^l n$」の誤りです．また，
    「$d\lesim_{\tau_1\typfun\tau_2}t \quad \Longleftrightarrow\quad
-   \forall e,s.e\lesim_{\tau_1}s\ \Rightarrow\ d(e)\lesim_{\tau_2}(t
-   s)$」は「$d\lesim_{\tau_1\typfun\tau_2}t \quad
-   \Longleftrightarrow\quad \forall e,s.e\lesim_{\tau_1}s\
-   \Rightarrow\ d(e)\lesim_{\tau_2}(t\ s)$」の誤りです．
+   \forall e,s.e\lesim_{\tau_1}s\ \Rightarrow\ d(e)\lesim_{\tau_2}(\old{t s})$」は
+   「$d\lesim_{\tau_1\typfun\tau_2}t \quad \Longleftrightarrow\quad 
+   \forall e,s.e\lesim_{\tau_1}s\ \Rightarrow\ d(e)\lesim_{\tau_2}(\new{t\ s})$」の誤りです．
 \end{itemize}
 
 \section*{第12章}
 
 \begin{itemize}
-\item P.260, 「定義」の段落:「$\mathcal{A}_1 + \mathcal{A}_2$」は
-  「$\mathcal{A} + \mathcal{B}$」の誤りです．（原書にも同様の誤植があり
+\item P.260, 「定義」の段落:「$\old{\mathcal{A}_1 + \mathcal{A}_2}$」は
+  「$\new{\mathcal{A} + \mathcal{B}}$」の誤りです．（原書にも同様の誤植があり
   ます．）
-\item P.260, 「定義」中の項目3: 「$Y \vdash_A A$」は「$Y \vdash_A a$」
+\item P.260, 「定義」中の項目3: 「$Y \vdash_A \old{A}$」は「$Y \vdash_A \new{a}$」
   の誤りです．
 \item P.263, 定理12.28の証明中の「単調性」の段落:
-  「$\mathcal{A} \times B$」は「$\mathcal{A} \times \mathcal{B}$」の誤
+  「$\mathcal{A} \times \old{B}$」は「$\mathcal{A} \times \new{\mathcal{B}}$」の誤
   りです．
 \item P.264, 「定義」の段落中の項目3:
-  「$\{(X_1,Y_1),\ldots,(X_n,Y_n)\}\neq\emptyset\AND\bigcup\{Y_i~|~X\vdash_A^*X_i\}\vdash_B^*Y\}$」
+  「$\{(X_1,Y_1),\ldots,(X_n,Y_n)\}\neq\emptyset\AND\bigcup\{Y_i~|~X\vdash_A^*X_i\}\vdash_B^*Y\old{\}}$」
   は
-  「$\{(X_1,Y_1),\ldots,(X_n,Y_n)\}\neq\emptyset\AND\bigcup\{Y_i~|~X\vdash_A^*X_i\}\vdash_B^*Y$．」
+  「$\{(X_1,Y_1),\ldots,(X_n,Y_n)\}\neq\emptyset\AND\bigcup\{Y_i~|~X\vdash_A^*X_i\}\vdash_B^*Y$\new{．}」
   の誤りです．
 \item P.269, 定理12.33の証
   明:
   「$\mC=(C,\Con,\vdash)=\mA\arrow\mB_\bot$と書
-  き，$C'=(C',\Con',\vdash')=\mA'\arrow\mB_\bot$とする」は
+  き，$\old{C'}=(C',\Con',\vdash')=\mA'\arrow\mB_\bot$とする」は
   「$\mC=(C,\Con,\vdash)=\mA\arrow\mB_\bot$と書
-  き，$\mC'=(C',\Con',\vdash')=\mA'\arrow\mB_\bot$とする」の誤りです．
+  き，$\new{\mC'}=(C',\Con',\vdash')=\mA'\arrow\mB_\bot$とする」の誤りです．
 \item P.270, 12行目:
-  「これから$(X,Y)$は$\bigcup_i(\mA_i\arrow\mB_{i\bot})$のトークンとな
+  「これから$(X,Y)$は$\bigcup_i(\mA_i\arrow\old{\mB_{i\bot}})$のトークンとな
   り，示された」は「これか
-  ら$(X,Y)$は$\bigcup_i(\mA_i\arrow\mB_{\bot})$のトークンとなり，示され
+  ら$(X,Y)$は$\bigcup_i(\mA_i\arrow\new{\mB_{\bot}})$のトークンとなり，示され
   た」の誤りです．
 \end{itemize}
 \section*{付録A}
 
 \begin{itemize}
 \item P.274, 問題A.1: 「任意の数$n,m$について$f(n) =
-  m$と$\FUNCMDC(n) = m$が成り立つことを示せ」は「任意の数$n,m$につい
-  て$f(n) = m$と$\FUNCMDC(n) = m$が同値であることを示せ」の誤りです．
+  m$と$\FUNCMDC(n) = m$が\old{成り立つ}ことを示せ」は「任意の数$n,m$につい
+  て$f(n) = m$と$\FUNCMDC(n) = m$が\new{同値である}ことを示せ」の誤りです．
 \item P.276,
   擬似コードの15行目:
-  「\text{$c_1$が$S$ステップ以内に停止した}」は
-  「\text{$c_2$が$S$ステップ以内に停止した}」の誤りです．
+  「\text{$\old{c_1}$が$S$ステップ以内に停止した}」は
+  「\text{$\new{c_2}$が$S$ステップ以内に停止した}」の誤りです．
 \item P.280, 定理A.12の証明:
   \[
     \begin{array}{lcl}
       c \in \bar{H} &\iff& \FunCmd{c}(\Encode{c}) \diverge\\
                     &\iff& \FunCmd{X_1 := \Encode{c}; c}(0) \diverge\\
-                    &\iff& \FunCmd{X_1 := \Encode{c}; c}(0) \in \bar{H_0}\\
+                    &\iff& \FunCmd{X_1 := \Encode{c}; c}\old{(0)} \in \bar{H_0}\\
                     &\iff& \FunCmd{C}(\Encode{X_1 := \Encode{c}; c}) \converge\\
                     &\iff& \FunCmd{C}(g(\Encode{c})) \converge\\
                     &\iff& \FunCmd{C}(\FunCmd{G}(\Encode{c})) \converge\\
@@ -1080,11 +1101,11 @@
   の誤りです．
 \item P.286, $H_{10}$の定義:
   \[
-    H_{10} = \set{\Encode{a} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
+    H_{10} = \set{\old{\Encode{a}} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
   \]
   と定義してしまっていましたが，これは
   \[
-    H_{10} = \set{a \in \Aexp \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
+    H_{10} = \set{\new{a \in \Aexp} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
   \]
   と定義すべきでした．（原書ではこのようになっています．このように定義しないと，問題A.23の$\Aexp\backslash H_{10}$が意味をなさなくなってしまいます．）
   この定義において，定理 A.22の「$H_{10}$が決定可能ではない」は（原書に説明がある通り）
