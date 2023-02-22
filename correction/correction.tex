@@ -992,7 +992,7 @@
 \section*{第11章}
 
 \begin{itemize}
-\item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)}\new{ \COL t}$」の誤りです．
+\item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)}\new{ \COL \tau}$」の誤りです．
 \item P.206, $\mathit{FV}$の定義:
   \[
     \mathit{FV}(\fst(t)) \old{{}=_{\mathit{def}}{}} \mathit{FV}(\snd(t)) \old{{}={}} \mathit{FV}(t)
@@ -1104,7 +1104,7 @@
                     &\iff& \FunCmd{C}(\Encode{X_1 := \Encode{c}; c}) \converge\\
                     &\iff& \FunCmd{C}(g(\Encode{c})) \converge\\
                     &\iff& \FunCmd{C}(\FunCmd{G}(\Encode{c})) \converge\\
-                    &\iff& \FunCmd{G;C}(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{G;C}(\Encode{c}) \converge\\
     \end{array}
   \]
   の誤りです．
