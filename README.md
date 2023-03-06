@@ -16,7 +16,7 @@
 
 ## 正誤表
 
-[こちらから](correction/correction.pdf)（最終更新: 2023年2月20日）
+[こちらから](correction/correction.pdf)（最終更新: 2023年2月22日）
 
 ## 翻訳者 Web サイト
 
