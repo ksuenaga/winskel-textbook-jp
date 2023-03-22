@@ -124,6 +124,25 @@
 
 \begin{itemize}
 \item P.35, 3.2節, 第2段落: 「すべての\old{位置}$X$について」は「すべての\new{プログラム変数}$X$について」の誤りです．
+\item P.41, 3.3節: $\sigma''$の定義において
+  \[
+    \sigma''=  \left\{
+      \begin{array}{ll}
+        \sigma[n-m/N] & \text{ $m<n$のとき} \\
+        \sigma[m-n/\old{N}] & \text{ $n<m$のとき} \\
+      \end{array}
+    \right.
+  \]
+  は
+  \[
+    \sigma''=  \left\{
+      \begin{array}{ll}
+        \sigma[n-m/N] & \text{ $m<n$のとき} \\
+        \sigma[m-n/\new{M}] & \text{ $n<m$のとき} \\
+      \end{array}
+    \right.
+  \]
+  の誤りです．
 \item P.41,
   3.3節:「$\tuple{\text{Euclid},\sigma''}\rightarrow\old{\sigma''}$とな
   る$\sigma''$が存在する」は
@@ -1135,6 +1154,6 @@
 
 \section*{謝辞}
 
-本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様．
+本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様，鹿野桂一郎様．
 
 \end{document}
