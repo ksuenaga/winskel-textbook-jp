@@ -2,7 +2,26 @@
 
 \documentclass[12pt,titlepage,twoside,openright,dvipdfmx]{jsbook}
 
+\usepackage{ifthen}
+
 \interfootnotelinepenalty=10000
+
+% Number to specify the version
+\def\VersionNum{1}
+% Number to specify
+\def\PrintNum{2}
+
+\ifnum \VersionNum = 1
+\def\VersionStr{第1版}
+\fi
+
+\ifnum \PrintNum = 1
+\def\PrintStr{第1刷}
+\fi
+
+\ifnum \PrintNum = 2
+\def\PrintStr{第2刷}
+\fi
 
 \usepackage{amsmath,stmaryrd,amssymb,amsthm,algorithm,algpseudocode,color,bcprules,url}
 \usepackage{proof}
@@ -16,7 +35,7 @@
 \usepackage[inference]{semantic}
 \usepackage[dvipdfmx]{graphicx}
 
-\title{『プログラミング言語の形式的意味論』正誤表}
+\title{『プログラミング言語の形式的意味論』正誤表 \\ \VersionStr{}\PrintStr{}用}
 \author{末永 幸平 \and 勝股 審也 \and 中澤 巧爾 \and 西村 進 \and 前田 敦司}
 \date{最終更新: \today}
 
@@ -68,14 +87,20 @@
 
 \section*{第1章}
 
+\ifnum \VersionNum = 1
+\ifnum \PrintNum = 1
 \begin{itemize}
 \item P.3, 1.2節，第2段落: 「$X$と$Y$が等しいことを\old{示すの}方法の一つである」とあるのは「$X$と$Y$が等しいことを\new{示す}方法の一つである」の誤りです．
 \item P.9, 1.3節，第4段落: 「$X$から$Y$\old{の}部分関数」とあるのは「$X$から$Y$\new{への}部分関数」の誤りです．
 \end{itemize}
+\fi
+\fi
 
 \section*{第2章}
 
 \begin{itemize}
+\ifnum \VersionNum = 1
+\ifnum \PrintNum = 1
   \item P.22, 2.3節: $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
     \infrule
     {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
@@ -86,6 +111,9 @@
     {\tuple{b_0 \land b_1, \sigma} \arrow \new{\Ttrue}}
     の誤りです．
   \item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
+    \fi
+    \fi
+\ifnum \VersionNum = 1
   \item P.24,
     問題2.7:「任意の状態$\sigma$について$\tuple{w,\sigma}\to \sigma'$と
     なるような状態$\sigma'$は存在しないことを説明せよ」は，曖昧性のある
@@ -98,6 +126,9 @@
     態$\sigma,
     \sigma'$を取ってきても，$\tuple{w,\sigma} \to \sigma'$は成り立たな
     い」ということです．
+\fi
+\ifnum \VersionNum = 1
+\ifnum \PrintNum = 1
   \item P.25, 2.5節，第3段落: 「状態を変えずにすぐ\old{停止し}するだろう」とあるのは「状態を変えずにすぐ\new{停止}するだろう」の誤りです．
   \item P.29, 2.6節, 第2段落:
     「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
@@ -106,6 +137,8 @@
     「状態$\sigma$において$a_0$の1ステップの評価によって式$a_0'$と状
     態$\new{\sigma}$が得られるとき，$a_0+a_1$の状態$\sigma$の下での1ステップ
     の評価によって式$a_0'+a_1$と状態$\new{\sigma}$が得られる．」の誤りです．
+\fi
+\fi
 \end{itemize}
 
 \section*{第3章}
@@ -122,6 +155,8 @@
   \tuple{b_1,\sigma}\rightarrow t_1 \AND P(b_1,\sigma,t_1) \AND
 }  
 
+\ifnum \VersionNum=1
+\ifnum \PrintNum=1
 \begin{itemize}
 \item P.35, 3.2節, 第2段落: 「すべての\old{位置}$X$について」は「すべての\new{プログラム変数}$X$について」の誤りです．
 \item P.41,
@@ -181,10 +216,13 @@
 \item P.47, 問題3.13:「右辺の中に現れる\old{位置}の集合」は「右辺の中に現れる
   \new{プログラム変数}の集合」の誤りです．
 \end{itemize}
-
+\fi
+\fi
 \section*{第4章}
 
 \begin{itemize}
+  \ifnum \VersionNum=1
+  \ifnum \PrintNum=1
   \item P.53, 4.2節: 以下の規則
   \[
     \infer
@@ -227,10 +265,18 @@
     \end{array}
   \]
   の誤りです．
+  \fi
+  \fi
+
+  \ifnum\VersionNum=1
 \item P.56, 下から7行目:「特殊な\termruleinduction{}の\terminstance{}で
   ある」とありますが，ここでの \terminstance{} は「規則インスタンス」と
   呼んでいるものとは関係なく，「例」という意味の一般名詞としてのインス
   タンスのつもりでした．混乱を招くので避けるべきでした．
+  \fi
+
+  \ifnum\VersionNum=1
+  \ifnum\PrintNum=1
 \item P.58, 上から9行目:
   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\in\Sigma$とする．」は
   「$c_0,c_1\in\mathbf{Com}, \sigma,\sigma'\new{,\sigma''}\in\Sigma$とする．」
@@ -275,11 +321,15 @@
     がいえる．
   \end{quote}
   の誤りです．（証明中のアイテムへの参照が壊れておりました．．．）
+  \fi
+  \fi
 \end{itemize}
 
 \section*{第5章}
 
 \begin{itemize}
+  \ifnum\VersionNum=1
+  \ifnum\PrintNum=1
 \item P.68,
   「$\mathbf{Bexp}$の表示」の部分において，「\termbooleanexpression{}の
   意味関数は，連言$\wedge_T$,
@@ -500,7 +550,11 @@
     「部分関数の集合$\new{\Sigma\PARTIAL\Sigma}$」
     の誤りです．
   \item P.83,下から7行目:「\old{規則のインスタンス}$R$のもとで」は「\new{規則イン
-    スタンスの集合}$R$のもとで」の誤りです．
+      スタンスの集合}$R$のもとで」の誤りです．
+    \fi
+    \fi
+
+    \ifnum\VersionNum=1
   \item P.84, 定理5.11の証明:
     \begin{align*}
       f(\mathit{fix}(f))
@@ -528,17 +582,24 @@
     のように各説明を一行ずつ下げて，各行の$\text{（\dots）}$が，その行
     の${=}$の右辺と，その前の行の${=}$の右辺とが等しい理由を説明する方
     が標準的かもしれません．
+    \fi
+    \ifnum\VersionNum=1
+    \ifnum\PrintNum=1
   \item P.85, 下から6行目:「この考え方は以前にも，規則
     の\terminstance{}の集合が連続な\old{演算子}を定めるのは」は「この考え方は
     以前にも，規則の\terminstance{}の集合が連続な\new{演算}を定めるのは」の誤
     りです．（原著の operator を，本書では「演算」と訳すことにしていま
     す．）
   \item P.86, 下から12行目: 「\old{演算子}$\widehat{R}$」は「\new{演
-    算}$\widehat{R}$」の誤りです．
+      算}$\widehat{R}$」の誤りです．
+    \fi
+    \fi
 \end{itemize}
 
 \section*{第6章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.92, 下から2行目:
   \begin{quote}
@@ -646,10 +707,14 @@
   \end{quote}
   の誤りです．
 \end{itemize}
+\fi
+\fi
 
 \section*{第7章}
 
 \begin{itemize}
+  \ifnum\VersionNum=1
+  \ifnum\PrintNum=1
 \item P.114, 脚注:
   \begin{quote}
     完全性定理は，述語論理の証明システム\old{によって証明可能な表明は任意の
@@ -669,6 +734,9 @@
   証明可能な表明は任意の解釈のもとで妥当であることを主張している．」で
   は述語論理の証明システムの健全性の説明となりますので，これは誤りで
   す．）
+  \fi
+  \fi
+  \ifnum\VersionNum=1
 \item P.116: $\mathbf{Assn}$が ``expressive'' であることを，本書で
   は$\mathbf{Assn}$が「\old{表現可能}」と訳しましたが，この訳語の選択はあまり
   適当ではないかもしれませ
@@ -679,6 +747,9 @@
   す．すなわち，最弱自由事前条件を表現できるというの
   が ``expressiveness'' の趣旨なので，「\new{表現力豊か}」とでも訳すべきかも
   しれません．
+  \fi
+  \ifnum\VersionNum=1
+  \ifnum\PrintNum=1
 \item P.118, 定理7.5の証明:
   \[
     \sigma \models^I  \old{w\lrbra{c,B}^I}
@@ -771,10 +842,14 @@
   「ただし$G \COL \PT \rightarrow \PT$は$G(p)(Q) =
   (\overline{b} \cap \Pt\sem{\new{c}}(p(Q))) \cup (\overline{\neg b} \cap
   Q)$で与えられる．」の誤りです．
+  \fi
+  \fi
 \end{itemize}
 
 \section*{第8章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.135, 下から3行目:「意味を与える\old{このと}できる」は「意味を与える\new{こ
   との}できる」の誤りです．
@@ -851,9 +926,13 @@
   「$\new{D_1 + \dots + D_k} \rightarrow E$」
   の誤りです．
 \end{itemize}
+\fi
+\fi
 
 \section*{第9章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.159, 9.1節:
   「整数$\old{n}$」は「整数$\new{n \in \mathbf{N}}$」の誤りです．なお，本書で
@@ -945,9 +1024,13 @@
   \]
   の誤りです．（原書ではこちらの記法を用いています．また，本書でも10.1節ではこの記法を用いています．）
 \end{itemize}
+\fi
+\fi
 
 \section*{第10章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.190:
   \begin{quote}
@@ -988,9 +1071,12 @@
   「$g$を$[{\it List}\times \new{\mathbf{N}\to \mathbf{N}_\bot}]$中の関数で」
   の誤りです．
 \end{itemize}
-
+\fi
+\fi
 \section*{第11章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.205, 型付け規則$\mathit{rec}$: 結論部分の「$\rec{y.(\lambda x.t)}$」は「$\rec{y.(\lambda x.t)}\new{ \COL \tau}$」の誤りです．
 \item P.206, $\mathit{FV}$の定義:
@@ -1035,9 +1121,12 @@
    「$d\lesim_{\tau_1\typfun\tau_2}t \quad \Longleftrightarrow\quad 
    \forall e,s.e\lesim_{\tau_1}s\ \Rightarrow\ d(e)\lesim_{\tau_2}(\new{t\ s})$」の誤りです．
 \end{itemize}
-
+\fi
+\fi
 \section*{第12章}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.260, 問題12.22:
   \begin{displaymath}
@@ -1053,6 +1142,7 @@
   ます．）
 \item P.260, 「定義」中の項目3: 「$Y \vdash_A \old{A}$」は「$Y \vdash_A \new{a}$」
   の誤りです．
+\item P.263, 2行目: 「$\old{\mathcal{A}_1 \times \mathcal{A}_2}$」は「$\new{\mathcal{A} \times \mathcal{B}}$」の誤りです．
 \item P.263, 定理12.28の証明中の「単調性」の段落:
   「$\mathcal{A} \times \old{B}$」は「$\mathcal{A} \times \new{\mathcal{B}}$」の誤
   りです．
@@ -1073,8 +1163,13 @@
   ら$(X,Y)$は$\bigcup_i(\mA_i\arrow\new{\mB_{\bot}})$のトークンとなり，示され
   た」の誤りです．
 \end{itemize}
+\fi
+\fi
+
 \section*{付録A}
 
+\ifnum\VersionNum=1
+\ifnum\PrintNum=1
 \begin{itemize}
 \item P.274, 問題A.1: 「任意の数$n,m$について$f(n) =
   m$と$\FUNCMDC(n) = m$が\old{成り立つ}ことを示せ」は「任意の数$n,m$につい
@@ -1122,16 +1217,18 @@
     H_{10} = \set{\Encode{a} \mid \mbox{$\sigma \models a = 0$を満たす$\sigma \in \States$が存在する}}
   \]
   が$\mathbf{N}$の決定可能な部分集合ではないことを意味することに注意してください．
-
 \end{itemize}
-
+\fi
+\fi
 \section*{その他}
 
+\ifnum\VersionNum=1
 \begin{itemize}
 \item 「規則インスタンス」と「規則のインスタンス」で訳語が揺れている箇
   所があるようです．この2つは使い分けられているわけではなく，どちら
   も ``rule instance'' の訳語を意図しています．
 \end{itemize}
+\fi
 
 \section*{謝辞}
 
