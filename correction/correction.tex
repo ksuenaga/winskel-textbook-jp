@@ -155,10 +155,29 @@
 \ifnum \PrintNum=1
 \begin{itemize}
 \item P.35, 3.2節, 第2段落: 「すべての\old{位置}$X$について」は「すべての\new{プログラム変数}$X$について」の誤りです．
+\item P.41, 3.3節: $\sigma''$の定義において
+  \[
+    \sigma''=  \left\{
+      \begin{array}{ll}
+        \sigma[n-m/N] & \text{ $m<n$のとき} \\
+        \sigma[m-n/\old{N}] & \text{ $n<m$のとき} \\
+      \end{array}
+    \right.
+  \]
+  は
+  \[
+    \sigma''=  \left\{
+      \begin{array}{ll}
+        \sigma[n-m/N] & \text{ $m<n$のとき} \\
+        \sigma[m-n/\new{M}] & \text{ $n<m$のとき} \\
+      \end{array}
+    \right.
+  \]
+  の誤りです．
 \item P.41,
   3.3節:「$\tuple{\text{Euclid},\sigma''}\rightarrow\old{\sigma''}$とな
-  る$\sigma''$が存在する」は
-  「$\tuple{\text{Euclid},\sigma''}\rightarrow\new{\sigma'}$となる$\sigma'$が
+  る\old{$\sigma''$}が存在する」は
+  「$\tuple{\text{Euclid},\sigma''}\rightarrow\new{\sigma'}$となる\new{$\sigma'$}が
   存在する」の誤りです．
 \item P.46, 3.4節:「性質が偽となる\old{最小}の導出が存在するという仮定」は「性質が偽となる\new{極小}の導出が存在するという仮定」の誤りです．
   また，命題3.12の証明において，「\old{最小}の導出$d$が存在して」は「\new{極小}の導出$d$が存在して」の誤り，「$d$の\old{最小性}に矛盾する」は「$d$の\new{極小性}に矛盾する」です．
@@ -1183,7 +1202,7 @@
                     &\iff& \FunCmd{C}(\Encode{X_1 := \Encode{c}; c}) \converge\\
                     &\iff& \FunCmd{C}(g(\Encode{c})) \converge\\
                     &\iff& \FunCmd{C}(\FunCmd{G}(\Encode{c})) \converge\\
-                    &\iff& \FunCmd{G;C}(\Encode{c})) \converge\\
+                    &\iff& \FunCmd{G;C}(\Encode{c})\old{)} \converge\\
     \end{array}
   \]
   は
@@ -1228,6 +1247,6 @@
 
 \section*{謝辞}
 
-本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様．
+本翻訳の誤りをご報告いただいた以下の方々に深く感謝申し上げます: gaxiiiiiiiiiiii様，hackermaskee様，衣笠公陽様，鹿野桂一郎様．
 
 \end{document}
