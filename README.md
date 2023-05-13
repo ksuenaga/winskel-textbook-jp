@@ -1,5 +1,7 @@
 {% include head.html %}
 
+[サポートサイトはこちら](https://ksuenaga.github.io/winskel-textbook-jp/)
+
 ## 本書について
 
 [『プログラミング言語の形式的意味論入門』](https://www.maruzen-publishing.co.jp/item/?book_no=304793)は，Glynn Winskel による ["The Formal Semantics of Programming Languages---An Introduction"](https://mitpress.mit.edu/9780262731034/the-formal-semantics-of-programming-languages/) の和訳です．原書はプログラムの意味を数学的に厳密に定義する手法を研究する分野であるプログラム意味論において世界的に使われている標準教科書です．刊行年は1993年と古いのですが，本書で解説されている内容はプログラム意味論の分野における入門的なトピックとして，現在も役立つ内容となっています．
