@@ -96,17 +96,28 @@
 
 \begin{itemize}
 \ifnum \VersionNum = 1
+\item P.22, 2.3節: $a_0 \leq a_1$ のための操作的意味論の2つ目の規則($\Tfalse$となる場合)の条件が
+\begin{quote}
+  $n_1$より$n_0$が大きいか等しいとき
+\end{quote}
+とあるのは
+\begin{quote}
+  $n_1$より$n_0$が大きいとき
+\end{quote}
+の誤りです．
+\fi
+\ifnum \VersionNum = 1
 \ifnum \PrintNum = 1
-  \item P.22, 2.3節: $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
-    \infrule
-    {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
-    {\tuple{b_0 \land b_1, \sigma} \arrow \old{\Tfalse}}
-    とあるのは
-    \infrule
-    {\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
-    {\tuple{b_0 \land b_1, \sigma} \arrow \new{\Ttrue}}
-    の誤りです．
-  \item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
+\item P.22, 2.3節: $b_1 \land b_2$ のための操作的意味論の3つ目の規則が
+\infrule
+{\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
+{\tuple{b_0 \land b_1, \sigma} \arrow \old{\Tfalse}}
+とあるのは
+\infrule
+{\tuple{b_0, \sigma} \arrow \Ttrue \andalso \tuple{b_1, \sigma} \arrow \Ttrue}
+{\tuple{b_0 \land b_1, \sigma} \arrow \new{\Ttrue}}
+の誤りです．
+\item P.24, 問題2.7: 「$w \sim \Cif\ b\ \Cthen\ (c;w)\ \Celse\ \Cskip$」とあるのは「$w \equiv \Cwhile\ \Ttrue\ \Cdo\ \Cskip$」の誤りです．
     \fi
     \fi
 \ifnum \VersionNum = 1
