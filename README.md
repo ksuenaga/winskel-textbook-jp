@@ -12,7 +12,7 @@
 
 ## このサイトについて
 
-[『プログラミング言語の形式的意味論入門』](https://www.maruzen-publishing.co.jp/item/?book_no=304793)のサポートサイトです．これまでに見つかった誤植や誤りについて，[正誤表](correction/correction.pdf)を配布しています．
+[『プログラミング言語の形式的意味論入門』](https://www.maruzen-publishing.co.jp/item/?book_no=304793)のサポートサイトです．これまでに見つかった誤植や誤りについて，[正誤表](#正誤表)を配布しています．
 
 もし本書に誤植や誤りを見つけた際には，[こちらから](https://github.com/ksuenaga/winskel-textbook-jp/issues) issue を立ててご報告いただけますとありがたいです．Webページの改善についても issue を立ててご提案いただければと思います．
 
