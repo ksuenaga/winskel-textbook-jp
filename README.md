@@ -18,7 +18,7 @@
 
 ## 正誤表
 
-最終更新: 2024年4月19日
+最終更新: 2024年5月8日
 
 - 第2刷: [こちらから](correction/correction-v1p2.pdf)
 - 第1刷: [こちらから](correction/correction-v1p1.pdf)
